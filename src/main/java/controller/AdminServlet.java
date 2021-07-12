@@ -38,11 +38,10 @@ public class AdminServlet extends HttpServlet {
                 p.setDescrizione(request.getParameter("descrizione"));
                 p.setDimensioni(request.getParameter("dimensioni"));
                 p.setPeso(Double.parseDouble(request.getParameter("peso")));
-                CategoriaDAO cDao = new CategoriaDAO();
-                Categoria c = new Categoria();
-                c.setNomeCategoria("fotocamere");
 
-                p.setCategoria(c);
+                Categoria provv = new Categoria();
+                provv.setNomeCategoria(request.getParameter("categoria"));
+                p.setCategoria(provv);
 
                 Part part = request.getPart("immagine");
                 String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString(); //nome immagine

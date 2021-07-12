@@ -95,7 +95,7 @@
             <tbody>
 
                 <tr>
-                    <td><a href = "provaAggiuntaProdotto.jsp">Gestione Prodotti<i class="fas fa-sort-down"></i></a></td>
+                    <td>Gestione Prodotti<i class="fas fa-sort-down"></i></td>
                 </tr>
 
                 <tr>

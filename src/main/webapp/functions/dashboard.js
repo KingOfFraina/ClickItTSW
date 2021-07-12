@@ -15,6 +15,10 @@ function modificaProdotto(id){
 
 }
 
+function aggiungiProdotto(){
+    window.location.href = "aggiuntaProdotto.jsp";
+}
+
 function loadTable(jsonProdotti){
     table = $('#tabella_prodotti').DataTable({
         "dom": '<"toolbar">frtip',
@@ -67,7 +71,7 @@ function loadTable(jsonProdotti){
             }
         ]
     });
-    $("#datagrid_visualizzaprodotti div.toolbar").html('<button onclick="aggiungiProdotto()" style="font-size: 15px; color: white; background-color: #0d6efd; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
+    $("#datagrid_visualizzaprodotti div.toolbar").html('<button onclick="aggiungiProdotto()" style="font-size: 15px; color: white; background-color: #900C3F; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
 
 
 
