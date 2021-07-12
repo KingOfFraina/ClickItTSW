@@ -7,9 +7,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
+    <link rel="stylesheet" type="text/css" href="./css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!---DATATABLE E BOOTSTRAP -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <title>Click.it</title>
 </head>
 <body>
@@ -107,13 +115,32 @@
         </table>
     </div>
     <div id="main-corpo">
-
+        <div id="datagrid_visualizzaprodotti" class="datagrid_centrali">
+            <table id="tabella_prodotti"  class="table table-hover ">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>marca</th>
+                    <th>modello</th>
+                    <th>categoria</th>
+                    <th>prezzo</th>
+                    <th>elimina</th>
+                    <th>modifica</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="functions/index.js"></script>
-    <script src="functions/general.js"></script>
+
 </div>
+
+
+<script src="functions/index.js"></script>
+<script src="functions/general.js"></script>
+<script src="functions/dashboard.js"></script>
+
 
 </body>
 </html>
