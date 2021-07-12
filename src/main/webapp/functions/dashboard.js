@@ -1,5 +1,6 @@
 function loadTable(jsonProdotti){
     table = $('#tabella_prodotti').DataTable({
+        "dom": '<"toolbar">frtip',
         "scrollY": "70vh",
         "scrollCollapse": true,
         'language': {
@@ -49,6 +50,8 @@ function loadTable(jsonProdotti){
             }
         ]
     });
+    $("#datagrid_visualizzaprodotti div.toolbar").html('<button onclick="aggiungiProdotto()" style="font-size: 15px; color: white; background-color: #0d6efd; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
+
 }
 
 $( document ).ready(function() {

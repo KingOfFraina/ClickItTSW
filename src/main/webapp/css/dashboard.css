@@ -2,11 +2,6 @@
     width: 90%;
 }
 
-#tabella_prodotti{
-    height: 100%;
-    width: 100%;
-}
-
 #main-corpo{
     overflow-y: scroll;
 }
@@ -14,6 +9,10 @@
 #navigazione a:hover{
     color: white !important;
     text-decoration: none;
+}
+
+.toolbar{
+    margin-bottom: -35px;
 }
 
 @media only screen and (max-width: 700px) {

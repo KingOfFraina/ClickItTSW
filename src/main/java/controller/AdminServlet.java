@@ -86,7 +86,7 @@ public class AdminServlet extends HttpServlet {
 
                 jsonObject.put("prodotti",array);
                 String risultato = jsonObject.toString();
-                request.setAttribute("prodotti", risultato);
+
                 PrintWriter out = response.getWriter();
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
