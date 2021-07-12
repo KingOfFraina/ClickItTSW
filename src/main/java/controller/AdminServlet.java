@@ -162,6 +162,27 @@ public class AdminServlet extends HttpServlet {
 
         }
 
+        else if(path.equals("/aggiungiCategoria")){
+            try {
+                CategoriaDAO dao = new CategoriaDAO();
+                Categoria c = new Categoria();
+                c.setNomeCategoria(request.getParameter("nomeCategoria"));
+                dao.addCategoria(c);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+        else if(path.equals("/eliminaCategoria"){
+            try {
+                CategoriaDAO dao = new CategoriaDAO();
+                dao.eliminaCategoria(request.getParameter("nomeCategoria"));
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
     }
 
     @Override

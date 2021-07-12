@@ -31,11 +31,18 @@ public class CategoriaDAO {
         return categorie;
     }
 
-    private int addCategoria(String nomeCategoria) throws SQLException {
+    public int addCategoria(Categoria c) throws SQLException {
         PreparedStatement stmt = connection.prepareStatement("INSERT INTO categoria VALUES (?)");
-        stmt.setString(1, nomeCategoria);
+        stmt.setString(1, c.getNomeCategoria());
         return stmt.executeUpdate();
 
+    }
+
+    public void eliminaCategoria(String nome) throws SQLException {
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM categoria WHERE nome = ?");
+        stmt.setString(1, nome);
+
+        stmt.executeUpdate();
     }
 
 }
