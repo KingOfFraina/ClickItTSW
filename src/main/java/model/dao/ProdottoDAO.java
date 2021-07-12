@@ -180,7 +180,9 @@ public class ProdottoDAO {
         return prodotti;
     }
 
-    public void eliminaProdotto(int idProdotto){
-
+    public void eliminaProdotto(int idProdotto) throws SQLException {
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM prodotto WHERE id_prodotto = ?");
+        stmt.setInt(1, idProdotto);
+        stmt.executeUpdate();
     }
 }
