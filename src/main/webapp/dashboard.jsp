@@ -81,7 +81,7 @@
             <p class="item-navigazione" onclick="show('prodotti')">Gestione Prodotti</p>
             <p class="item-navigazione" onclick="show('categorie')">Gestione Categorie</p>
             <p class="item-navigazione" onclick="show('utenti')">Mostra Utenti</p>
-            <p class="item-navigazione" onclick="show('ordini')">Gestione Ordini</p>
+            <p class="item-navigazione" onclick="show('ordini')">Mostra Ordini</p>
         </div>
     </div>
 </div>
@@ -106,7 +106,7 @@
                     <td>Mostra Utenti<i class="fas fa-sort-down"></i></td>
                 </tr>
                 <tr onclick="show('ordini')">
-                    <td>Gestione Ordini<i class="fas fa-sort-down"></i></td>
+                    <td>Mostra Ordini<i class="fas fa-sort-down"></i></td>
                 </tr>
             </tbody>
         </table>
@@ -150,6 +150,22 @@
                     <th>cognome</th>
                     <th>email</th>
                     <th>telefono</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="datagrid_visualizzaordini" class="datagrid_centrali hide">
+            <table id="tabella_ordini"  class="table table-hover ">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>utente</th>
+                    <th>data</th>
+                    <th>indirizzo</th>
+                    <th>totale</th>
+                    <th>info</th>
                 </tr>
                 </thead>
                 <tbody>
