@@ -226,7 +226,7 @@ public class AdminServlet extends HttpServlet {
                 for(Ordine u: ordini){
                     JSONObject provv = new JSONObject();
                     provv.put("id", u.getId());
-                    provv.put("utente", u.getUtente().getEmail());
+                    provv.put("utente", u.getUtente().getId());
                     provv.put("data", u.getDataOrdine() );
                     provv.put("indirizzo", u.getIndirizzo());
                     provv.put("totale", u.getPrezzoTotale());
@@ -246,6 +246,50 @@ public class AdminServlet extends HttpServlet {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
+        }
+
+        else if(path.equals("/infoOrdine")){
+            OrdineDAO dao = null;
+            try {
+                dao = new OrdineDAO();
+                Ordine o = dao.getOrdineById(Integer.parseInt(request.getParameter("idOrdine")));
+                Carrello c = dao.getProdottoOrdine(o);
+                ArrayList<ProdottoCarrello> prodottiCarr = c.getProdotti();
+                ArrayList<Prodotto> prodotti = new ArrayList<>();
+
+                for(ProdottoCarrello p: prodottiCarr){
+                    prodotti.add(p.getProdotto());
+                }
+
+                JSONObject jsonObject = new JSONObject();
+                JSONArray array = new JSONArray();
+                int i = 0;
+                for(Prodotto u: prodotti){
+                    JSONObject provv = new JSONObject();
+                    provv.put("id", u.getId());
+                    provv.put("marca", u.getMarca());
+                    provv.put("modello", u.getModello());
+                    provv.put("prezzo", u.getPrezzo());
+                    provv.put("quantita", prodottiCarr.get(i).getQuantita());
+                    array.put(provv);
+                    i++;
+                }
+
+
+
+                jsonObject.put("prodotti",array);
+                jsonObject.put("totale", c.getTotaleCarrello());
+                String risultato = jsonObject.toString();
+
+                PrintWriter out = response.getWriter();
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                out.print(risultato);
+                out.flush();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
         }
     }
 

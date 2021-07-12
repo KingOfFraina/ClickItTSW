@@ -165,6 +165,7 @@
                     <th>data</th>
                     <th>indirizzo</th>
                     <th>totale</th>
+                    <th>info</th>
                 </tr>
                 </thead>
                 <tbody>

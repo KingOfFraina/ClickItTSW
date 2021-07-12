@@ -29,7 +29,7 @@ function modificaProdotto(id){
 }
 
 function infoOrdine(id_ordine){
-    alert("t'appo");
+    alert(id_ordine);
 }
 
 function aggiungiCategoria(){
@@ -279,16 +279,16 @@ function loadTableOrdini(jsonOrdini){
             }
         ]
     });
-
+    /*
     $('#tabella_ordini tbody').on('click', 'tr', function (e) {
         if(e.target.getAttribute("id")=="info"||e.target.getAttribute("id")=="info_icon"){
             if (e.target.nodeName == 'BUTTON' || e.target.nodeName == 'I') {
                 let id_ordine = table_ordini.row( this ).data().id;
-                alert(id_ordine);
                 infoOrdine(id_ordine);
             }
         }
     });
+     */
 }
 
 
@@ -342,7 +342,6 @@ function show(element){
     }
 
     if(element=="ordini"){
-        alert("ordini");
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {

@@ -117,7 +117,8 @@ public class OrdineDAO {
                 Ordine o = new Ordine();
                 o.setId(rs.getInt(1));
                 UtenteDAO dao = new UtenteDAO();
-                Utente u = dao.getUtenteById(rs.getInt(2));
+                Utente u = new Utente();
+                u.setId(rs.getInt(2));
                 o.setUtente(u);
                 o.setDataOrdine(rs.getDate(3));
                 o.setIndirizzo(rs.getString(4));
