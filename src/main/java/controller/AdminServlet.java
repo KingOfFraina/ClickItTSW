@@ -173,7 +173,7 @@ public class AdminServlet extends HttpServlet {
             }
         }
 
-        else if(path.equals("/eliminaCategoria"){
+        else if(path.equals("/eliminaCategoria")){
             try {
                 CategoriaDAO dao = new CategoriaDAO();
                 dao.eliminaCategoria(request.getParameter("nomeCategoria"));
