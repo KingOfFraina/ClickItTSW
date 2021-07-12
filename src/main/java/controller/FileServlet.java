@@ -42,7 +42,8 @@ public class FileServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
 
-        this.basePath = System.getenv("CATALINA_HOME") + File.separator + "upload";
+        this.basePath = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\upload"
+                + File.separator + "upload";
 
         // Validate base path.
         if (this.basePath == null) {

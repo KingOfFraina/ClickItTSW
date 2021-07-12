@@ -1,7 +1,9 @@
 package controller;
 
 import model.beans.Categoria;
+import model.beans.Prodotto;
 import model.dao.CategoriaDAO;
+import model.dao.ProdottoDAO;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -22,8 +24,15 @@ public class InitServlet extends HttpServlet {
 
             getServletContext().setAttribute("categorie", categorie);
 
+            ProdottoDAO pDao = new ProdottoDAO();
+            ArrayList<Prodotto> prodotti = pDao.getUltimiProdotti();
+            getServletContext().setAttribute("prodotti", prodotti);
+
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 }
