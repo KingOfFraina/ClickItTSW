@@ -137,9 +137,7 @@ public class AdminServlet extends HttpServlet {
                 JSONArray array = new JSONArray();
 
                 for(Categoria c: categorie){
-                    JSONObject provv = new JSONObject();
-                    provv.put("nome", c.getNomeCategoria());
-                    array.put(provv);
+                    array.put(c.getNomeCategoria());
                 }
 
                 jsonObject.put("categorie",array);
