@@ -29,7 +29,7 @@ function modificaProdotto(id){
 }
 
 function infoOrdine(id_ordine){
-    alert(id_ordine);
+    window.location.href = ("visualizzaOrdineAdmin.jsp?ordine="+id_ordine);
 }
 
 function aggiungiCategoria(){
@@ -279,7 +279,7 @@ function loadTableOrdini(jsonOrdini){
             }
         ]
     });
-    /*
+
     $('#tabella_ordini tbody').on('click', 'tr', function (e) {
         if(e.target.getAttribute("id")=="info"||e.target.getAttribute("id")=="info_icon"){
             if (e.target.nodeName == 'BUTTON' || e.target.nodeName == 'I') {
@@ -288,7 +288,7 @@ function loadTableOrdini(jsonOrdini){
             }
         }
     });
-     */
+
 }
 
 
