@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>ERROR 401</title>
 </head>
 <body>
-
+<p style="text-align:center">ERROR 401- UNAUTHORIZED</p>
 </body>
 </html>

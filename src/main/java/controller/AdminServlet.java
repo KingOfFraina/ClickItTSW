@@ -3,6 +3,7 @@ package controller;
 import model.beans.Categoria;
 import model.beans.Prodotto;
 import model.beans.Specifiche;
+import model.beans.Utente;
 import model.dao.CategoriaDAO;
 import model.dao.ProdottoDAO;
 import org.json.JSONArray;
@@ -27,6 +28,14 @@ public class AdminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getPathInfo() == null ? "/" : request.getPathInfo();
+
+        Utente user = (Utente) request.getSession().getAttribute("user");
+
+        if(user == null || !user.isAdmin()){
+            String address = "/WEB-INF/error-pages/unauthorized.jsp";
+            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+            dispatcher.forward(request, response);
+        }
 
         if(path.equals("/aggiungiProdotto")){
             try {

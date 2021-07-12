@@ -24,7 +24,9 @@
 <body>
 <%Utente u = (Utente) session.getAttribute("user");
     if(u == null || !u.isAdmin()) {
-        response.sendRedirect(request.getServletContext().getContextPath() + "/landingpage");
+        String address = "/WEB-INF/error-pages/unauthorized.jsp";
+        RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+        dispatcher.forward(request, response);
     }
 %>
 <!-- MENU NAVIGAZIONALE -->
