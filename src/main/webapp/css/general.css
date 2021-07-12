@@ -92,6 +92,7 @@ body{
     text-decoration: none;
     color: white;
     transition: 0.2s;
+    text-align: center;
 }
 
 .item-navigazione i{

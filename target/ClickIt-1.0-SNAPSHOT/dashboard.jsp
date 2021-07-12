@@ -70,9 +70,6 @@
                     <a href="login.jsp" class="item-navigazione">LOGIN <i class="fas fa-sign-in-alt"></i></a>
                 </c:otherwise>
             </c:choose>
-            <a href="categorie.jsp" class="item-navigazione">CATALOGO <i class="fas fa-tags"></i></a>
-            <a href="carrello.jsp" class="item-navigazione">CARRELLO <i class="fas fa-shopping-cart"></i></a>
-            <a href="#" class="item-navigazione">CHI SIAMO <i class="far fa-question-circle"></i></a>
             <c:choose>
                 <c:when test="${sessionScope.user!= null}">
                     <a href="paginaUtente.jsp" class="item-navigazione">${sessionScope.user.nome} <i class="fas fa-user-circle"></i></a>
@@ -81,6 +78,10 @@
                     <a href="login.jsp" class="item-navigazione">PROFILO <i class="fas fa-user-circle"></i></a>
                 </c:otherwise>
             </c:choose>
+            <p class="item-navigazione" onclick="show('prodotti')">Gestione Prodotti</p>
+            <p class="item-navigazione" onclick="show('categorie')">Gestione Categorie</p>
+            <p class="item-navigazione" onclick="show('utenti')">Mostra Utenti</p>
+            <p class="item-navigazione" onclick="show('ordini')">Gestione Ordini</p>
         </div>
     </div>
 </div>
@@ -95,25 +96,18 @@
             </tr>
             </thead>
             <tbody>
-
                 <tr onclick="show('prodotti')">
                     <td>Gestione Prodotti<i class="fas fa-sort-down"></i></td>
                 </tr>
-
                 <tr onclick="show('categorie')">
                     <td>Gestione Categorie<i class="fas fa-sort-down"></i></td>
                 </tr>
-
                 <tr onclick="show('utenti')">
-                    <td>Gestione Utenti<i class="fas fa-sort-down"></i></td>
+                    <td>Mostra Utenti<i class="fas fa-sort-down"></i></td>
                 </tr>
-
                 <tr onclick="show('ordini')">
                     <td>Gestione Ordini<i class="fas fa-sort-down"></i></td>
                 </tr>
-
-
-
             </tbody>
         </table>
     </div>
@@ -141,6 +135,21 @@
                 <tr>
                     <th>categoria</th>
                     <th>elimina</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="datagrid_visualizzautenti" class="datagrid_centrali hide">
+            <table id="tabella_utenti"  class="table table-hover ">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nome</th>
+                    <th>cognome</th>
+                    <th>email</th>
+                    <th>telefono</th>
                 </tr>
                 </thead>
                 <tbody>
