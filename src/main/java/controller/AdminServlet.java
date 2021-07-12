@@ -1,11 +1,10 @@
 package controller;
 
-import model.beans.Categoria;
-import model.beans.Prodotto;
-import model.beans.Specifiche;
-import model.beans.Utente;
+import model.beans.*;
 import model.dao.CategoriaDAO;
+import model.dao.OrdineDAO;
 import model.dao.ProdottoDAO;
+import model.dao.UtenteDAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -183,6 +182,71 @@ public class AdminServlet extends HttpServlet {
             }
         }
 
+        else if(path.equals("/mostraUtenti")){
+            try {
+                UtenteDAO utenteDAO = new UtenteDAO();
+                ArrayList<Utente> utenti = utenteDAO.getUtenti();
+
+                JSONObject jsonObject = new JSONObject();
+                JSONArray array = new JSONArray();
+
+                for(Utente u: utenti){
+                    JSONObject provv = new JSONObject();
+                    provv.put("id", u.getId());
+                    provv.put("nome", u.getNome());
+                    provv.put("cognome", u.getCognome());
+                    provv.put("email", u.getEmail());
+                    provv.put("telefono", u.getTelefono());
+
+                    array.put(provv);
+                }
+
+                jsonObject.put("utenti",array);
+                String risultato = jsonObject.toString();
+
+                PrintWriter out = response.getWriter();
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                out.print(risultato);
+                out.flush();
+        } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
+        }
+
+        else if(path.equals("/mostraOrdini")){
+            try {
+                OrdineDAO dao = new OrdineDAO();
+                ArrayList<Ordine> ordini = dao.getOrdini();
+
+                JSONObject jsonObject = new JSONObject();
+                JSONArray array = new JSONArray();
+
+                for(Ordine u: ordini){
+                    JSONObject provv = new JSONObject();
+                    provv.put("id", u.getId());
+                    provv.put("utente", u.getUtente().getEmail());
+                    provv.put("data", u.getDataOrdine() );
+                    provv.put("indirizzo", u.getIndirizzo());
+                    provv.put("totale", u.getPrezzoTotale());
+
+                    array.put(provv);
+                }
+
+                jsonObject.put("ordini",array);
+                String risultato = jsonObject.toString();
+
+                PrintWriter out = response.getWriter();
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                out.print(risultato);
+                out.flush();
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
     }
 
     @Override

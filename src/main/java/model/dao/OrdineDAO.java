@@ -108,4 +108,22 @@ public class OrdineDAO {
         }
 
         }
+
+        public ArrayList<Ordine> getOrdini() throws SQLException {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ordine");
+            ResultSet rs = stmt.executeQuery();
+            ArrayList<Ordine> ordini = new ArrayList<>();
+            while(rs.next()){
+                Ordine o = new Ordine();
+                o.setId(rs.getInt(1));
+                UtenteDAO dao = new UtenteDAO();
+                Utente u = dao.getUtenteById(rs.getInt(2));
+                o.setUtente(u);
+                o.setDataOrdine(rs.getDate(3));
+                o.setIndirizzo(rs.getString(4));
+                o.setPrezzoTotale(rs.getDouble(5));
+                ordini.add(o);
+            }
+            return ordini;
+        }
 }
