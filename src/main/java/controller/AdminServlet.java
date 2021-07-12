@@ -98,6 +98,16 @@ public class AdminServlet extends HttpServlet {
 
         }
 
+        if(path.equals("/eliminaProdotto")){
+            try {
+                ProdottoDAO dao = new ProdottoDAO();
+                dao.eliminaProdotto(Integer.parseInt(request.getParameter("id")));
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
+        }
+
     }
 
     @Override

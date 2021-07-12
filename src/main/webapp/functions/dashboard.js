@@ -1,4 +1,5 @@
 function eliminaProdotto(id){
+    alert(id+"aaa");
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -23,7 +24,7 @@ function loadTable(jsonProdotti){
         'language': {
             "decimal": "",
             "emptyTable": "Nessun prodotto presente",
-            "info": "Mostrando da _START_ a _END_ di _TOTAL_ prodotti",
+            "info": " _TOTAL_ prodotti",
             "infoEmpty": "Mostrando da 0 a 0 di 0 prodotti",
             "infoFiltered": "(filtrato da _MAX_ prodotti totali)",
             "infoPostFix": "",
@@ -58,12 +59,12 @@ function loadTable(jsonProdotti){
             {
                 "targets": -2,
                 "data": null,
-                "defaultContent": '<button id="cancella" style="background-color: DodgerBlue; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="elimina_icon" class="fas fa-trash-alt"></i></button>'
+                "defaultContent": '<button id="cancella" style="background-color: #900C3F; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="elimina_icon" class="fas fa-trash-alt"></i></button>'
             },
             {
                 "targets": -1,
                 "data": null,
-                "defaultContent": '<button id="modifica" style="background-color: DodgerBlue; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="modifica_icon" class="fas fa-pen"></i></button>'
+                "defaultContent": '<button id="modifica" style="background-color: #900C3F; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="modifica_icon" class="fas fa-pen"></i></button>'
             }
         ]
     });
@@ -75,6 +76,7 @@ function loadTable(jsonProdotti){
         if(e.target.getAttribute("id")=="modifica"||e.target.getAttribute("id")=="modifica_icon"){
             if (e.target.nodeName == 'BUTTON' || e.target.nodeName == 'I') {
                 let id_prodotto = table.row( this ).data().id;
+                eliminaProdotto(id_prodotto);
             }
         }else{
             if(e.target.getAttribute("id")=="cancella"||e.target.getAttribute("id")=="elimina_icon"){
