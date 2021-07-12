@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>ERROR 401</title>
+    <title>ERROR 500</title>
 </head>
 <body>
-<p>ERROR 401 - UNAUTHORIZED</p>
+<p>ERROR 500 - INTERNAL ERROR</p>
 <style>
     *{
         margin: 0;

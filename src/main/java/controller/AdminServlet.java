@@ -82,7 +82,7 @@ public class AdminServlet extends HttpServlet {
             }
 
             try {
-            ProdottoDAO  dao = new ProdottoDAO();
+                ProdottoDAO  dao = new ProdottoDAO();
                 dao.aggiungiSpecifiche(list, dao.getLastProduct());
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
