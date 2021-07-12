@@ -184,7 +184,10 @@ public class ProdottoDAO {
     public void eliminaProdotto(int idProdotto) throws SQLException {
         PreparedStatement stmt = connection.prepareStatement("DELETE FROM prodotto WHERE id_prodotto = ?");
         stmt.setInt(1, idProdotto);
+        PreparedStatement stmt2 = connection.prepareStatement("DELETE from SPECIFICHE WHERE id_prodotto = ?");
+        stmt2.setInt(1, idProdotto);
         stmt.executeUpdate();
+        stmt2.executeUpdate();
     }
 
     public void aggiungiSpecifiche(ArrayList<Specifiche> specifiche, int idProdotto) throws SQLException {
