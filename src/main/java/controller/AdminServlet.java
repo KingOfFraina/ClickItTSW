@@ -13,6 +13,7 @@ import javax.servlet.annotation.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
@@ -85,8 +86,12 @@ public class AdminServlet extends HttpServlet {
 
                 jsonObject.put("prodotti",array);
                 String risultato = jsonObject.toString();
-
                 request.setAttribute("prodotti", risultato);
+                PrintWriter out = response.getWriter();
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                out.print(risultato);
+                out.flush();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }

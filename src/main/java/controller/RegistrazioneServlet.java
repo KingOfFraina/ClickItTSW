@@ -42,7 +42,7 @@ public class RegistrazioneServlet extends HttpServlet {
 
             File file;
             try (InputStream fileStream = part.getInputStream()) {
-                String uploadRoot = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0" + File.separator + "upload" + File.separator;;
+                String uploadRoot = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0" + File.separator + "upload" + File.separator;
                 file = new File(uploadRoot + fileName);
                 if (!file.exists())
                     Files.copy(fileStream, file.toPath());
