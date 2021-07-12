@@ -77,31 +77,31 @@
     <table id="aggiuntaProdotto">
         <tr>
             <td>marca</td>
-            <td><input type="text" name="marca" id="marca"></td>
+            <td><input type="text" name="marca" id="marca" required></td>
         </tr>
         <tr>
             <td>modello</td>
-            <td><input type="text" name="modello" id="modello"></td>
+            <td><input type="text" name="modello" id="modello" required></td>
         </tr>
         <tr>
             <td>categoria</td>
-            <td><select name="categorie" name="categoria" id="categorie"></select></td> <!--RICORDA DI RIEMPIRLE CON JQUERY -->
+            <td><select name="categorie" name="categoria" id="categorie" required></select></td> <!--RICORDA DI RIEMPIRLE CON JQUERY -->
         </tr>
         <tr>
             <td>prezzo</td>
-            <td><input type="number" name="prezzo" id="prezzo" min="0.01" step=".01"></td>
+            <td><input type="number" name="prezzo" id="prezzo" min="0.01" step=".01" required></td>
         </tr>
         <tr>
             <td>peso</td>
-            <td><input type="number" name="peso" id="peso" min="0.01" step=".1"></td>
+            <td><input type="number" name="peso" id="peso" min="0.01" step=".1" required></td>
         </tr>
         <tr>
             <td>dimensioni</td>
-            <td><input type="text" name="dimensioni" id="dimensioni"></td>
+            <td><input type="text" name="dimensioni" id="dimensioni" required></td>
         </tr>
         <tr>
             <td>descrizione</td>
-            <td><textarea rows="3" name="descrizione" id="descrizione"></textarea></td>
+            <td><textarea rows="3" name="descrizione" id="descrizione" required></textarea></td>
         </tr>
         <tr>
             <td colspan="2"><input type="file" name="immagine" id="immagine" required></td>

@@ -96,20 +96,20 @@
             </thead>
             <tbody>
 
-                <tr>
+                <tr onclick="show('prodotti')">
                     <td>Gestione Prodotti<i class="fas fa-sort-down"></i></td>
                 </tr>
 
-                <tr>
-                    <td><a href = "#">Gestione Categorie<i class="fas fa-sort-down"></i></a></td>
+                <tr onclick="show('categorie')">
+                    <td>Gestione Categorie<i class="fas fa-sort-down"></i></td>
                 </tr>
 
-                <tr>
-                    <td><a href = "#">Gestione Utenti<i class="fas fa-sort-down"></i></a></td>
+                <tr onclick="show('utenti')">
+                    <td>Gestione Utenti<i class="fas fa-sort-down"></i></td>
                 </tr>
 
-                <tr>
-                    <td><a href = "#">Gestione Ordini<i class="fas fa-sort-down"></i></a></td>
+                <tr onclick="show('ordini')">
+                    <td>Gestione Ordini<i class="fas fa-sort-down"></i></td>
                 </tr>
 
 
@@ -118,7 +118,7 @@
         </table>
     </div>
     <div id="main-corpo">
-        <div id="datagrid_visualizzaprodotti" class="datagrid_centrali">
+        <div id="datagrid_visualizzaprodotti" class="datagrid_centrali hide">
             <table id="tabella_prodotti"  class="table table-hover ">
                 <thead>
                 <tr>
@@ -129,6 +129,18 @@
                     <th>prezzo</th>
                     <th>elimina</th>
                     <th>modifica</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="datagrid_visualizzacategorie" class="datagrid_centrali hide">
+            <table id="tabella_categorie"  class="table table-hover ">
+                <thead>
+                <tr>
+                    <th>categoria</th>
+                    <th>elimina</th>
                 </tr>
                 </thead>
                 <tbody>

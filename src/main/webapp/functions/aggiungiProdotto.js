@@ -3,7 +3,7 @@ nSpecifiche = 0;
 function nuovaRiga(){
     let placeholder1 = "nome specifica " + (nSpecifiche+1);
     let placeholder2 = "valore specifica " + (nSpecifiche+1);
-    $("#aggiuntaProdotto").find('tr:last').prev().prev().after('<tr class="specifica"> <td><input id="nome-specifica" type="text" placeholder="'+placeholder1+'"></td> <td><input id = "valore-specifica" type="text" placeholder="'+placeholder2+'"></td></tr>');
+    $("#aggiuntaProdotto").find('tr:last').prev().prev().after('<tr class="specifica"> <td><input id="nome-specifica" type="text" placeholder="'+placeholder1+'" required></td> <td><input id = "valore-specifica" type="text" placeholder="'+placeholder2+'" required></td></tr>');
     nSpecifiche++;
 }
 
@@ -22,7 +22,6 @@ $( document ).ready(function() {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.response)
             loadDropDown((JSON.parse(this.response)).categorie);
         }
     };
@@ -55,18 +54,7 @@ function salvaProdotto(){
     });
 
     json_def = JSON.stringify(json_def);
-    console.log(json_def);
 
-
-    /*
-    let xmlhttp = new XMLHttpRequest();   // new HttpRequest instance
-    xmlhttp.open("POST", url);
-    xmlhttp.setRequestHeader("Content-Type", "application/json");
-    let formData = new FormData();
-    formData.append("immagine", file);
-    xmlhttp.send(json_def);
-    console.log(url);
-    */
 
     var formData = new FormData();
     formData.append('immagine', file);
@@ -83,7 +71,5 @@ function salvaProdotto(){
             alert("success");
         }
     });
-
-    alert(marca + "" + modello + "" + categoria + "" + prezzo + "" + peso + "" + dimensioni + "" + descrizione + "")
 
 }
