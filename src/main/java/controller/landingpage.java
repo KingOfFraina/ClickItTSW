@@ -4,6 +4,8 @@ import model.beans.Categoria;
 import model.beans.Prodotto;
 import model.dao.CategoriaDAO;
 import model.dao.ProdottoDAO;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -35,6 +37,7 @@ public class landingpage extends HttpServlet {
         String address = "/index.jsp";
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);
         dispatcher.forward(request, response);
+
     }
 
     @Override

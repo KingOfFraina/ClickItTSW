@@ -2,6 +2,8 @@ package model.dao;
 
 import model.beans.Categoria;
 import model.beans.Prodotto;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import utils.ConPool;
 
 import java.sql.Connection;
@@ -13,6 +15,7 @@ import java.util.ArrayList;
 public class ProdottoDAO {
     private Connection connection;
 
+
     public ProdottoDAO() throws SQLException {
         this.connection = ConPool.getConnection();
     }
@@ -21,6 +24,8 @@ public class ProdottoDAO {
         PreparedStatement stmt = connection.prepareStatement("SELECT * FROM prodotto");
         ArrayList<Prodotto> prodotti = new ArrayList<>();
         ResultSet rs = stmt.executeQuery();
+
+
 
         while(rs.next()){
             Prodotto p = new Prodotto();
@@ -38,7 +43,11 @@ public class ProdottoDAO {
             p.setPrezzo(rs.getDouble(10));
 
             prodotti.add(p);
+
+
+
         }
+
 
         return prodotti;
     }

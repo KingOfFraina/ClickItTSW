@@ -4,6 +4,8 @@ import model.beans.Categoria;
 import model.beans.Prodotto;
 import model.dao.CategoriaDAO;
 import model.dao.ProdottoDAO;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,6 +16,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @MultipartConfig
 @WebServlet(name = "AdminServlet", urlPatterns = "/AdminServlet/*")
@@ -57,6 +60,36 @@ public class AdminServlet extends HttpServlet {
                 throwables.printStackTrace();
             }
 
+
+        }
+
+        if(path.equals("/mostraProdotti")){
+            ProdottoDAO dao = null;
+            try {
+                dao = new ProdottoDAO();
+                ArrayList<Prodotto> prodotti2 = dao.getProdotti();
+
+                JSONObject jsonObject = new JSONObject();
+                JSONArray array = new JSONArray();
+
+                for(Prodotto p: prodotti2){
+                    JSONObject provv = new JSONObject();
+                    provv.put("id", p.getId());
+                    provv.put("marca", p.getMarca());
+                    provv.put("modello", p.getModello());
+                    provv.put("categoria", p.getCategoria().getNomeCategoria());
+                    provv.put("prezzo", p.getPrezzo());
+
+                    array.put(provv);
+                }
+
+                jsonObject.put("prodotti",array);
+                String risultato = jsonObject.toString();
+
+                request.setAttribute("prodotti", risultato);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
 
         }
 
