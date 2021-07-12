@@ -29,7 +29,18 @@ function modificaProdotto(id){
 }
 
 function aggiungiCategoria(){
-
+    let categoria = prompt("Inserisci la nuova categoria: ");
+    if(categoria==null||categoria=="") return;
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            alert("Categoria aggiunta con successo!");
+            location.reload();
+        }
+    };
+    let url = "AdminServlet/aggiungiCategoria?nomeCategoria="+categoria;
+    xhttp.open("GET", url, true);
+    xhttp.send();
 }
 
 function aggiungiProdotto(){
@@ -163,7 +174,7 @@ function loadTableCategorie(jsonCategorie){
             }
         ]
     });
-    $("#tabella_categorie div.toolbar").html('<button onclick="aggiungiCategoria()" style="font-size: 15px; color: white; background-color: #900C3F; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
+    $("#datagrid_visualizzacategorie div.toolbar").html('<button onclick="aggiungiCategoria()" style="font-size: 15px; color: white; background-color: #900C3F; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
 
     $('#tabella_categorie tbody').on('click', 'tr', function (e) {
         if(e.target.getAttribute("id")=="cancella"||e.target.getAttribute("id")=="elimina_icon"){
