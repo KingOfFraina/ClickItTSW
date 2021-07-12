@@ -2,6 +2,7 @@ package model.dao;
 
 import model.beans.Categoria;
 import model.beans.Prodotto;
+import model.beans.Specifiche;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import utils.ConPool;
@@ -184,5 +185,24 @@ public class ProdottoDAO {
         PreparedStatement stmt = connection.prepareStatement("DELETE FROM prodotto WHERE id_prodotto = ?");
         stmt.setInt(1, idProdotto);
         stmt.executeUpdate();
+    }
+
+    public void aggiungiSpecifiche(ArrayList<Specifiche> specifiche, int idProdotto) throws SQLException {
+        PreparedStatement stmt = connection.prepareStatement("INSERT INTO specifiche VALUES(?, ?, ?)");
+        stmt.setInt(2, idProdotto);
+
+        for(Specifiche s: specifiche){
+            stmt.setString(1, s.getNome());
+            stmt.setString(3, s.getValore());
+            stmt.executeUpdate();
+        }
+    }
+
+    public int getLastProduct() throws SQLException {
+        PreparedStatement stmt = connection.prepareStatement("SELECT MAX(id_prodotto) FROM prodotto;");
+        ResultSet rs = stmt.executeQuery();
+        rs.next();
+
+        return rs.getInt(1);
     }
 }

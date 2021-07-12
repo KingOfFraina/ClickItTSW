@@ -2,6 +2,7 @@ package controller;
 
 import model.beans.Categoria;
 import model.beans.Prodotto;
+import model.beans.Specifiche;
 import model.dao.CategoriaDAO;
 import model.dao.ProdottoDAO;
 import org.json.JSONArray;
@@ -18,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 @MultipartConfig
 @WebServlet(name = "AdminServlet", urlPatterns = "/AdminServlet/*")
@@ -57,6 +59,23 @@ public class AdminServlet extends HttpServlet {
                 }
 
 
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            JSONObject obj = new JSONObject(request.getParameter("specifiche"));
+
+            ArrayList<Specifiche> list = new ArrayList<>();
+            JSONArray array = obj.getJSONArray("specifiche");
+            for(int i = 0 ; i < array.length() ; i++){
+                Specifiche s = new Specifiche();
+                s.setNome(array.getJSONObject(i).getString("nome"));
+                s.setValore(array.getJSONObject(i).getString("valore"));
+                list.add(s);
+            }
+
+            try {
+            ProdottoDAO  dao = new ProdottoDAO();
+                dao.aggiungiSpecifiche(list, dao.getLastProduct());
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -102,6 +121,35 @@ public class AdminServlet extends HttpServlet {
             try {
                 ProdottoDAO dao = new ProdottoDAO();
                 dao.eliminaProdotto(Integer.parseInt(request.getParameter("id")));
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
+        }
+
+        if(path.equals("/mostraCategorie")){
+
+            try {
+                CategoriaDAO dao = new CategoriaDAO();
+                ArrayList<Categoria> categorie = dao.getCategorie();
+
+                JSONObject jsonObject = new JSONObject();
+                JSONArray array = new JSONArray();
+
+                for(Categoria c: categorie){
+                    JSONObject provv = new JSONObject();
+                    provv.put("nome", c.getNomeCategoria());
+                    array.put(provv);
+                }
+
+                jsonObject.put("categorie",array);
+                String risultato = jsonObject.toString();
+
+                PrintWriter out = response.getWriter();
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                out.print(risultato);
+                out.flush();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
