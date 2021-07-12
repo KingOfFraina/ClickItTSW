@@ -1,5 +1,4 @@
 function eliminaProdotto(id){
-    alert(id+"aaa");
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -76,12 +75,13 @@ function loadTable(jsonProdotti){
         if(e.target.getAttribute("id")=="modifica"||e.target.getAttribute("id")=="modifica_icon"){
             if (e.target.nodeName == 'BUTTON' || e.target.nodeName == 'I') {
                 let id_prodotto = table.row( this ).data().id;
-                eliminaProdotto(id_prodotto);
+                modificaProdotto(id_prodotto);
             }
         }else{
             if(e.target.getAttribute("id")=="cancella"||e.target.getAttribute("id")=="elimina_icon"){
                 if (e.target.nodeName == 'BUTTON' || e.target.nodeName == 'I') {
                     let id_prodotto = table.row( this ).data().id;
+                    eliminaProdotto(id_prodotto);
                 }
             }
         }
