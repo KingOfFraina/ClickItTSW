@@ -39,10 +39,7 @@ public class LoginServlet extends HttpServlet {
 
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            String address = "/login-error.jsp";
-            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-            dispatcher.forward(request, response);
+           response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
 
         catch(LoginErratoException e2){
