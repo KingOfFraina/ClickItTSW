@@ -349,9 +349,7 @@ public class AdminServlet extends HttpServlet {
         }
 
        else if(path.equals("/modificaProdotto")){
-            System.out.println("QUI CI ENTRO1");
             try {
-                System.out.println("QUI CI ENTRO");
                 ProdottoDAO dao = new ProdottoDAO();
                 Prodotto p = new Prodotto();
                 p.setMarca(request.getParameter("marca"));
@@ -362,21 +360,14 @@ public class AdminServlet extends HttpServlet {
                 p.setPeso(Double.parseDouble(request.getParameter("peso")));
                 p.setId(Integer.parseInt(request.getParameter("id")));
 
-                System.out.println("2");
+
                 Categoria provv = new Categoria();
                 provv.setNomeCategoria(request.getParameter("categoria"));
                 p.setCategoria(provv);
 
-                System.out.println("3");
-                Map<String, String[]> map = request.getParameterMap();
-                for(String key: map.keySet()){
-                    System.out.println(map.get(key).toString());
-                }
-
                 if(request.getPart("immagine") != null) {
                     Part part = request.getPart("immagine");
                     String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString(); //nome immagine
-
                     p.setImmagine(fileName);
 
                     File file;
@@ -390,11 +381,8 @@ public class AdminServlet extends HttpServlet {
                     p.setImmagine(null);
                 }
 
-                System.out.println("4");
-
                 dao.modificaProdotto(p);
 
-                System.out.println("5");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
