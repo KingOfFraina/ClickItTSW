@@ -123,6 +123,7 @@
                         <td>PRODOTTO</td>
                         <td>TESTO</td>
                         <td>VALUTAZIONE</td>
+                        <td></td>
                     </tr>
                     </thead>
                     <tbody>
@@ -132,6 +133,7 @@
                             <td>${recensione.prodotto.marca} ${recensione.prodotto.modello}</td>
                             <td>${recensione.testo}</td>
                             <td>${recensione.valutazione}</td>
+                            <td><a href="RecensioniServlet/eliminaRecensione?recensione=${recensione.id}">Elimina Recensione</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>

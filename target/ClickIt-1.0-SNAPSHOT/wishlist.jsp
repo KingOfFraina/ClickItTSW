@@ -24,7 +24,7 @@
                 <a href="login.jsp" class="item-navigazione">PROFILO <i class="fas fa-user-circle"></i></a>
             </c:otherwise>
         </c:choose>
-        <a href="#" class="item-navigazione">CHI SIAMO <i class="far fa-question-circle"></i></a>
+        <a href="chiSiamo.jsp" class="item-navigazione">CHI SIAMO <i class="far fa-question-circle"></i></a>
         <c:choose>
             <c:when test="${sessionScope.user != null}">
                 <a href="logoutServlet" class="item-navigazione">LOGOUT <i class="fas fa-sign-out-alt"></i></a>
@@ -49,7 +49,7 @@
             </c:choose>
             <a href="categorie.jsp" class="item-navigazione">CATALOGO <i class="fas fa-tags"></i></a>
             <a href="carrello.jsp" class="item-navigazione">CARRELLO <i class="fas fa-shopping-cart"></i></a>
-            <a href="#" class="item-navigazione">CHI SIAMO <i class="far fa-question-circle"></i></a>
+            <a href="chiSiamo.jsp" class="item-navigazione">CHI SIAMO <i class="far fa-question-circle"></i></a>
             <c:choose>
                 <c:when test="${sessionScope.user!= null}">
                     <a href="paginaUtente.jsp" class="item-navigazione">${sessionScope.user.nome} <i class="fas fa-user-circle"></i></a>
