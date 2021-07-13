@@ -5,6 +5,7 @@ import model.beans.Recensione;
 import model.beans.Utente;
 import model.dao.ProdottoDAO;
 import model.dao.RecensioneDAO;
+import model.dao.UtenteDAO;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -48,13 +49,18 @@ public class RecensioniServlet extends HttpServlet {
             try {
                 RecensioneDAO dao = new RecensioneDAO();
                 dao.deleteRecensione(Integer.parseInt(request.getParameter("recensione")));
+                UtenteDAO uDao  = new UtenteDAO();
+                Utente provv = (Utente)request.getSession().getAttribute("user");
+                Utente u = uDao.getUtenteById(provv.getId());
+                request.getSession().setAttribute("user", u);
+                response.sendRedirect( request.getServletContext().getContextPath()+"/paginaUtente.jsp");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
 
         else{
-            //redirect a pagina 500
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
         }
     }
 

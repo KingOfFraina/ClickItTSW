@@ -29,7 +29,6 @@ public class InitServlet extends HttpServlet {
             getServletContext().setAttribute("prodotti", prodotti);
 
 
-
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -291,6 +291,10 @@ public class AdminServlet extends HttpServlet {
             }
 
         }
+
+        else{
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+        }
     }
 
     @Override
