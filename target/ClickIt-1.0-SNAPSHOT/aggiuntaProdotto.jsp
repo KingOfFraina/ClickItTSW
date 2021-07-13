@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/aggiungiProdotto.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Click.it</title>
+    <title>Aggiunta Prodotto - Click.it</title>
 </head>
 <body>
 <!-- MENU NAVIGAZIONALE -->

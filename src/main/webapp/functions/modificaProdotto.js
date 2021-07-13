@@ -9,12 +9,7 @@ function salvaModificaProdotto(){
     let dimensioni = $("#dimensioni").val();
     let descrizione = $("#descrizione").val();
     let file = document.getElementById("immagine");
-    alert(file.files.length);
-    if(file.files.length==0){
-        file = null;
-    }else{
-        file = file.files[0];
-    }
+
 
     let json_def = `{"specifiche":[]}`;
     json_def = JSON.parse(json_def);
@@ -29,7 +24,7 @@ function salvaModificaProdotto(){
 
 
     var formData = new FormData();
-    formData.append('immagine', file);
+    if(file.files.length>0) formData.append('immagine', file);
     formData.append('specifiche', json_def);
     let url = `AdminServlet/modificaProdotto?marca=${marca}&modello=${modello}&prezzo=${prezzo}&descrizione=${descrizione}&dimensioni=${dimensioni}&peso=${peso}&categoria=${categoria}&id=${id_prodotto_global}`;
 

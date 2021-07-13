@@ -19,7 +19,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @MultipartConfig
 @WebServlet(name = "AdminServlet", urlPatterns = "/AdminServlet/*")
@@ -366,10 +368,12 @@ public class AdminServlet extends HttpServlet {
                 p.setCategoria(provv);
 
                 System.out.println("3");
-                String param = request.getParameter("immagine");
-                int param2 = (int) request.getPart("immagine").getSize();
+                Map<String, String[]> map = request.getParameterMap();
+                for(String key: map.keySet()){
+                    System.out.println(map.get(key).toString());
+                }
 
-                if(!param.equals("null")||param2>0) {
+                if(request.getPart("immagine") != null) {
                     Part part = request.getPart("immagine");
                     String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString(); //nome immagine
 
