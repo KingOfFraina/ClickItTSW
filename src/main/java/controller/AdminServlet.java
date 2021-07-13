@@ -34,6 +34,7 @@ public class AdminServlet extends HttpServlet {
             String address = "/WEB-INF/error-pages/unauthorized.jsp";
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);
             dispatcher.forward(request, response);
+            return;
         }
 
         if(path.equals("/aggiungiProdotto")){
@@ -85,9 +86,9 @@ public class AdminServlet extends HttpServlet {
                 dao.aggiungiSpecifiche(list, dao.getLastProduct());
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
-
-
         }
 
         if(path.equals("/mostraProdotti")){
@@ -120,8 +121,9 @@ public class AdminServlet extends HttpServlet {
                 out.flush();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
-
         }
 
         if(path.equals("/eliminaProdotto")){
@@ -130,8 +132,9 @@ public class AdminServlet extends HttpServlet {
                 dao.eliminaProdotto(Integer.parseInt(request.getParameter("id")));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
-
         }
 
         if(path.equals("/mostraCategorie")){
@@ -157,8 +160,9 @@ public class AdminServlet extends HttpServlet {
                 out.flush();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
-
         }
 
         else if(path.equals("/aggiungiCategoria")){
@@ -169,6 +173,8 @@ public class AdminServlet extends HttpServlet {
                 dao.addCategoria(c);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
         }
 
@@ -179,6 +185,8 @@ public class AdminServlet extends HttpServlet {
 
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
         }
 
@@ -211,8 +219,9 @@ public class AdminServlet extends HttpServlet {
                 out.flush();
         } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
-
         }
 
         else if(path.equals("/mostraOrdini")){
@@ -235,6 +244,7 @@ public class AdminServlet extends HttpServlet {
                 }
 
                 jsonObject.put("ordini",array);
+
                 String risultato = jsonObject.toString();
 
                 PrintWriter out = response.getWriter();
@@ -245,6 +255,8 @@ public class AdminServlet extends HttpServlet {
 
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
         }
 
@@ -288,8 +300,9 @@ public class AdminServlet extends HttpServlet {
                 out.flush();
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+            }finally {
+                return;
             }
-
         }
 
         else{
