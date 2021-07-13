@@ -387,16 +387,13 @@ public class AdminServlet extends HttpServlet {
                 throwables.printStackTrace();
             }
 
-            System.out.println("6");
             try {
                 ProdottoDAO dao = new ProdottoDAO();
-                dao.eliminaSpecificheProdotto(Integer.parseInt(request.getParameter("idProdotto")));
+                dao.eliminaSpecificheProdotto(Integer.parseInt(request.getParameter("id")));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
 
-
-            System.out.println("6");
             JSONObject obj = new JSONObject(request.getParameter("specifiche"));
 
             ArrayList<Specifiche> list = new ArrayList<>();
@@ -407,11 +404,8 @@ public class AdminServlet extends HttpServlet {
                 s.setValore(array.getJSONObject(i).getString("valore"));
                 list.add(s);
 
-                System.out.println("spec");
             }
 
-
-            System.out.println("7");
             try {
                 ProdottoDAO  dao = new ProdottoDAO();
                 dao.aggiungiSpecifiche(list, dao.getLastProduct());
