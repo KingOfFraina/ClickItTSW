@@ -18,10 +18,12 @@ function confronta(idProdotto){
         localStorage.setItem("prodotto1", idProdotto);
     }else{
         if(localStorage.getItem("prodotto2") == null || localStorage.getItem("prodotto2") == "null"){
+            $('html').css('cursor', 'wait');
             alert("Secondo prodotto aggiunto al confronto");
             localStorage.setItem("prodotto2", idProdotto);
             redirectConfronto();
         }else{
+            alert("Primo prodotto aggiunto al confronto, scegline un altro!");
             localStorage.setItem("prodotto1", idProdotto);
             localStorage.setItem("prodotto2", null);
         }

@@ -19,9 +19,7 @@ public class CheckOutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         if(request.getSession().getAttribute("user") == null){
-            String address = "/login.jsp";
-            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-            dispatcher.forward(request, response);
+            response.sendRedirect( request.getServletContext().getContextPath()+"/login.jsp");
         }
 
         Carrello carrello =  (Carrello)(request.getSession().getAttribute("carrello")); //prendo il carrello dalla sessione

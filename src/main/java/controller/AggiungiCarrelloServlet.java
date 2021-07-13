@@ -17,11 +17,6 @@ public class AggiungiCarrelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
-        if (session.getAttribute("user") == null){
-            String address = "/login.jsp";
-            RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-            dispatcher.forward(request, response);
-        }
 
         if(session.getAttribute("carrello") != null){
             ProdottoCarrello prodotto = new ProdottoCarrello();
@@ -77,7 +72,6 @@ public class AggiungiCarrelloServlet extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher(address);
             dispatcher.forward(request, response);
         }
-        response.sendRedirect(request.getHeader("referer"));
     }
 
     @Override
