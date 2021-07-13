@@ -20,6 +20,7 @@ public class CheckOutServlet extends HttpServlet {
 
         if(request.getSession().getAttribute("user") == null){
             response.sendRedirect( request.getServletContext().getContextPath()+"/login.jsp");
+            return;
         }
 
         Carrello carrello =  (Carrello)(request.getSession().getAttribute("carrello")); //prendo il carrello dalla sessione

@@ -165,8 +165,23 @@
 	color: #900C3F;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1050px) {
 
+}
+
+@media only screen and (max-width: 1000px) {
+	#menu-categorie table{
+		font-size: 2.5vh;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	#menu-categorie table{
+		font-size: 2vh;
+	}
+}
+
+@media only screen and (max-width: 700px) {
 	#menu-categorie {
 		display: none;
 	}
@@ -189,7 +204,7 @@
 		max-height: 50vh;
 	}
 
-	#prodotti-vetrina{ /* QUESTO E' SBAGLIATO MA FUNZIONA E MI SCOCCIO DI FIXARLO - METTI BORDI PER CAPIRE*/
+	#prodotti-vetrina{
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;

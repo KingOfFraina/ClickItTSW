@@ -33,8 +33,6 @@ function acquista(){
         return;
     }
     let indirizzo = prompt("Inserisci l'indirizzo: ", "Via roma 129");
-
-    alert(indirizzo);
     if(indirizzo == ""){
         alert("Inserire un indirizzo valido!");
         event.preventDefault();
