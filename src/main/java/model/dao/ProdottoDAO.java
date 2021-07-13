@@ -215,4 +215,35 @@ public class ProdottoDAO {
 
         return stmt.executeUpdate();
     }
+
+    public void modificaProdotto(Prodotto p) throws SQLException{
+        if(p.getImmagine() == null) {
+            PreparedStatement stmt = connection.prepareStatement("UPDATE prodotto SET marca = ?, modello = ?, prezzo = ?, descrizione = ?, dimensioni = ?, peso = ?, categoria = ? WHERE id_prodotto = ?");
+            stmt.setString(1, p.getMarca());
+            stmt.setString(2, p.getModello());
+            stmt.setDouble(3, p.getPrezzo());
+            stmt.setString(4, p.getDescrizione());
+            stmt.setString(5, p.getDimensioni());
+            stmt.setDouble(6, p.getPeso());
+            stmt.setString(7, p.getCategoria().getNomeCategoria());
+            stmt.setInt(8, p.getId());
+
+            stmt.executeUpdate();
+        }
+
+        else{
+            PreparedStatement stmt = connection.prepareStatement("UPDATE prodotto SET marca = ?, modello = ?, prezzo = ?, descrizione = ?, dimensioni = ?, peso = ?, categoria = ?, immagine =? WHERE id_prodotto = ?");
+            stmt.setString(1, p.getMarca());
+            stmt.setString(2, p.getModello());
+            stmt.setDouble(3, p.getPrezzo());
+            stmt.setString(4, p.getDescrizione());
+            stmt.setString(5, p.getDimensioni());
+            stmt.setDouble(6, p.getPeso());
+            stmt.setString(7, p.getCategoria().getNomeCategoria());
+            stmt.setString(8, p.getImmagine());
+            stmt.setInt(9, p.getId());
+
+            stmt.executeUpdate();
+        }
+    }
 }

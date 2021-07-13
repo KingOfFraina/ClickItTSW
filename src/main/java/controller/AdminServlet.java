@@ -287,8 +287,6 @@ public class AdminServlet extends HttpServlet {
                     i++;
                 }
 
-
-
                 jsonObject.put("prodotti",array);
                 jsonObject.put("totale", c.getTotaleCarrello());
                 String risultato = jsonObject.toString();
@@ -379,7 +377,7 @@ public class AdminServlet extends HttpServlet {
                     }
 
                 }
-                dao.addProdotto(p);
+                dao.modificaProdotto(p);
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
