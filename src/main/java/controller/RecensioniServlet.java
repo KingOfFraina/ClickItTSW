@@ -53,9 +53,7 @@ public class RecensioniServlet extends HttpServlet {
                 Utente provv = (Utente)request.getSession().getAttribute("user");
                 Utente u = uDao.getUtenteById(provv.getId());
                 request.getSession().setAttribute("user", u);
-                String address = "/landingpage";
-                RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-                dispatcher.forward(request, response);
+                response.sendRedirect( request.getServletContext().getContextPath()+"/paginaUtente.jsp");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
