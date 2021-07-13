@@ -347,7 +347,9 @@ public class AdminServlet extends HttpServlet {
         }
 
        else if(path.equals("/modificaProdotto")){
+            System.out.println("QUI CI ENTRO1");
             try {
+                System.out.println("QUI CI ENTRO");
                 ProdottoDAO dao = new ProdottoDAO();
                 Prodotto p = new Prodotto();
                 p.setMarca(request.getParameter("marca"));
@@ -356,17 +358,22 @@ public class AdminServlet extends HttpServlet {
                 p.setDescrizione(request.getParameter("descrizione"));
                 p.setDimensioni(request.getParameter("dimensioni"));
                 p.setPeso(Double.parseDouble(request.getParameter("peso")));
+                p.setId(Integer.parseInt(request.getParameter("id")));
 
+                System.out.println("2");
                 Categoria provv = new Categoria();
                 provv.setNomeCategoria(request.getParameter("categoria"));
                 p.setCategoria(provv);
 
-                if(request.getParameter("immagine") != null) {
+                System.out.println("3");
+                String param = request.getParameter("immagine");
+                int param2 = (int) request.getPart("immagine").getSize();
+
+                if(!param.equals("null")||param2>0) {
                     Part part = request.getPart("immagine");
                     String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString(); //nome immagine
 
                     p.setImmagine(fileName);
-
 
                     File file;
                     try (InputStream fileStream = part.getInputStream()) {
@@ -375,12 +382,20 @@ public class AdminServlet extends HttpServlet {
                         if (!file.exists())
                             Files.copy(fileStream, file.toPath());
                     }
-
+                }else{
+                    p.setImmagine(null);
                 }
+
+                System.out.println("4");
+
                 dao.modificaProdotto(p);
+
+                System.out.println("5");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
+
+            System.out.println("6");
             try {
                 ProdottoDAO dao = new ProdottoDAO();
                 dao.eliminaSpecificheProdotto(Integer.parseInt(request.getParameter("idProdotto")));
@@ -388,6 +403,8 @@ public class AdminServlet extends HttpServlet {
                 throwables.printStackTrace();
             }
 
+
+            System.out.println("6");
             JSONObject obj = new JSONObject(request.getParameter("specifiche"));
 
             ArrayList<Specifiche> list = new ArrayList<>();
@@ -397,8 +414,12 @@ public class AdminServlet extends HttpServlet {
                 s.setNome(array.getJSONObject(i).getString("nome"));
                 s.setValore(array.getJSONObject(i).getString("valore"));
                 list.add(s);
+
+                System.out.println("spec");
             }
 
+
+            System.out.println("7");
             try {
                 ProdottoDAO  dao = new ProdottoDAO();
                 dao.aggiungiSpecifiche(list, dao.getLastProduct());

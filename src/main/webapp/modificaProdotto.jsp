@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/aggiungiProdotto.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Aggiunta Prodotto - Click.it</title>
+    <title>Modifica Prodotto - Click.it</title>
 </head>
 <body>
 <!-- MENU NAVIGAZIONALE -->
@@ -104,19 +104,20 @@
             <td><textarea rows="3" name="descrizione" id="descrizione" required></textarea></td>
         </tr>
         <tr>
-            <td colspan="2"><input type="file" name="immagine" id="immagine" required></td>
+            <td colspan="2"><input type="file" name="immagine" id="immagine"></td>
         </tr>
         <tr>
             <td colspan="2"><button style="width: 100%" onclick="nuovaRiga()">Aggiungi Specifica</button></td>
         </tr>
         <tr>
-            <td colspan="2"><button style="width: 100%" onclick="salvaProdotto()">Salva</button></td>
+            <td colspan="2"><button style="width: 100%" onclick="salvaModificaProdotto()">Salva</button></td>
         </tr>
     </table>
 </div>
 <!-- FINE CORPO PAGINA-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="functions/aggiungiProdotto.js"></script>
+<script src="functions/modificaProdotto.js"></script>
 <script src="functions/general.js"></script>
 </body>
 </html>

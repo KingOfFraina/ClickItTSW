@@ -68,7 +68,8 @@ function salvaProdotto(){
         contentType: false,
         data: formData,
         complete: function(data){
-            alert("success");
+            alert("Prodotto aggiunto con successo!");
+            window.location.replace("dashboard.jsp");
         }
     });
 

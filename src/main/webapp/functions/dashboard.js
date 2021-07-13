@@ -25,7 +25,7 @@ function eliminaCategoria(categoria){
 }
 
 function modificaProdotto(id){
-
+    window.location.href = "modificaProdotto.jsp?idProdotto="+id;
 }
 
 function infoOrdine(id_ordine){
