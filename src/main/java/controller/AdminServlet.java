@@ -322,6 +322,7 @@ public class AdminServlet extends HttpServlet {
                 jsonObject.put("peso", p.getPeso());
                 jsonObject.put("dimensioni", p.getDimensioni());
                 jsonObject.put("categoria", p.getCategoria().getNomeCategoria());
+                jsonObject.put("descrizione", p.getDescrizione());
 
                 for(Specifiche s: specifiche){
                     JSONObject provv = new JSONObject();
