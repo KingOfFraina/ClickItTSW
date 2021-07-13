@@ -12,6 +12,11 @@
  	<title>Click.it</title>
  </head>
  <body onload="start()">
+ <% if(session.getAttribute("user") != null){
+	 if(((Utente) session.getAttribute("user")).isAdmin()) {
+		 response.sendRedirect( request.getServletContext().getContextPath()+"/dashboard.jsp");
+ }
+ }%>
  	<!-- MENU NAVIGAZIONALE -->
  	<div id="menu">
  		<img src="./img/logo.png" alt="Click.it" id="logo">

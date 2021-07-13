@@ -29,9 +29,14 @@ $(".quantitaProdottoCarrello").bind('keyup mouseup', function () {
 function acquista(){
     if($(".prodottoCarrello").length<1){
         alert("Impossibile acquistare un carrello vuoto!");
-        event.preventDefault();
+        event.preventDefault(); //ferma l'action del form
         return;
     }
     let indirizzo = prompt("Inserisci l'indirizzo: ", "Via roma 129");
+    if(indirizzo == ""){
+        alert("Inserire un indirizzo valido!");
+        event.preventDefault();
+        return;
+    }
     $("#indirizzo").val(indirizzo);
 }

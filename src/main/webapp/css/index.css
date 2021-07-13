@@ -166,7 +166,23 @@
 }
 
 @media only screen and (max-width: 1050px) {
+	.immagine-prodotto{
+		height: 4vh;
+	}
 
+	.titolo-prodotto{
+		margin-top: 4px;
+		font-size: 17px;
+	}
+
+	.descrizione-prodotto{
+		font-size: 8px;
+	}
+
+	.prezzo-prodotto{
+		margin-top: 4px;
+		font-size: 17px;
+	}
 }
 
 @media only screen and (max-width: 1000px) {
@@ -178,6 +194,25 @@
 @media only screen and (max-width: 900px) {
 	#menu-categorie table{
 		font-size: 2vh;
+	}
+
+
+	.immagine-prodotto{
+		height: 3.5vh;
+	}
+
+	.titolo-prodotto{
+		margin-top: 4px;
+		font-size: 16px;
+	}
+
+	.descrizione-prodotto{
+		font-size: 7px;
+	}
+
+	.prezzo-prodotto{
+		margin-top: 4px;
+		font-size: 16px;
 	}
 }
 
