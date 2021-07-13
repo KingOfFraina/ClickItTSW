@@ -408,7 +408,7 @@ public class AdminServlet extends HttpServlet {
 
             try {
                 ProdottoDAO  dao = new ProdottoDAO();
-                dao.aggiungiSpecifiche(list, dao.getLastProduct());
+                dao.aggiungiSpecifiche(list, Integer.parseInt(request.getParameter("id")));
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }finally {

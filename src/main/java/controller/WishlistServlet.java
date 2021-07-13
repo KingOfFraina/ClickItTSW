@@ -19,9 +19,8 @@ public class WishlistServlet extends HttpServlet {
         if(Integer.parseInt(request.getParameter("cod")) == 1){
 
             if(request.getSession().getAttribute("user") == null){
-                String address = "/login.jsp";
-                RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-                dispatcher.forward(request, response);
+                response.sendRedirect( request.getServletContext().getContextPath()+"/login.jsp");
+                return;
             }
 
             try {
