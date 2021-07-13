@@ -41,7 +41,7 @@
     <div id="navigazione">
         <c:choose>
             <c:when test="${sessionScope.user!= null}">
-                <a href="paginaUtente.jsp" class="item-navigazione">bentornato admin <i class="fas fa-user-circle"></i></a>
+                <a class="item-navigazione">bentornato admin <i class="fas fa-user-circle"></i></a>
             </c:when>
             <c:otherwise>
                 <a href="login.jsp" class="item-navigazione">PROFILO <i class="fas fa-user-circle"></i></a>
@@ -176,6 +176,9 @@
 
 </div>
 
+<footer class="footer">
+    <p>Click.it P.IVA: 08831029384910293049a</p>
+</footer>
 
 <script src="functions/index.js"></script>
 <script src="functions/general.js"></script>

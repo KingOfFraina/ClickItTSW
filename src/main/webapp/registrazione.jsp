@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/registrazione.css">
+    <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Click.it</title>
 </head>
@@ -31,8 +32,35 @@
     </form>
 </div>
 
+<footer class="footer">
+    <p>Click.it P.IVA: 08831029384910293049a</p>
+</footer>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./functions/registrazione.js"></script>
 <script src="./functions/general.js"></script>
+<style>
+    .footer{
+        color: white;
+        background-color: #900C3F;
+        height: 2vh;
+        text-align: center;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        z-index: 1000;
+    }
+
+    .footer p{
+        margin: 0;
+        padding: 0;
+    }
+</style>
 </body>
 </html>

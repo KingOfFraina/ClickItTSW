@@ -139,6 +139,9 @@
             </div>
         </div>
         <!-- FINE CORPO PAGINA-->
+        <footer class="footer">
+            <p>Click.it P.IVA: 08831029384910293049a</p>
+        </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="functions/registrazione.js"></script>
     <script src="functions/paginaUtente.js"></script>

@@ -118,8 +118,8 @@
     #acquistaCarrello{
         font-size: 10px;
         border-radius: 30px;
-        height: 5%;
-        width: 70%;
+        height: auto;
+        width: auto;
     }
 
     #acquistaCarrello:hover{

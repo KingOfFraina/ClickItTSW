@@ -26,9 +26,35 @@
     </form>
     <a href="registrazione.jsp" id="registrati">Registrati adesso</a>
 </div>
+<footer class="footer">
+    <p>Click.it P.IVA: 08831029384910293049a</p>
+</footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./functions/login.js"></script>
 <script src="./functions/general.js"></script>
+<style>
+    .footer{
+        color: white;
+        background-color: #900C3F;
+        height: 2vh;
+        text-align: center;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        z-index: 1000;
+    }
+
+    .footer p{
+        margin: 0;
+        padding: 0;
+    }
+</style>
 </body>
 </html>

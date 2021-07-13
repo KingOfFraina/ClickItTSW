@@ -56,7 +56,7 @@ function loadTableProdotti(jsonProdotti){
     if(table_prodotti != null) return;
     table_prodotti = $('#tabella_prodotti').DataTable({
         "dom": '<"toolbar">frtip',
-        "scrollY": "70vh",
+        "scrollY": "60vh",
         "scrollCollapse": true,
         'language': {
             "decimal": "",
@@ -139,7 +139,7 @@ function loadTableCategorie(jsonCategorie){
     if(table_categorie != null) return;
     table_categorie = $('#tabella_categorie').DataTable({
         "dom": '<"toolbar">frtip',
-        "scrollY": "70vh",
+        "scrollY": "60vh",
         "scrollCollapse": true,
         'language': {
             "decimal": "",
@@ -194,7 +194,7 @@ table_utenti = null;
 function loadTableUtenti(jsonUtenti){
     if(table_utenti != null) return;
     table_utenti = $('#tabella_utenti').DataTable({
-        "scrollY": "70vh",
+        "scrollY": "60vh",
         "scrollCollapse": true,
         'language': {
             "decimal": "",
@@ -236,7 +236,7 @@ function loadTableOrdini(jsonOrdini){
     console.log(jsonOrdini);
     if(table_ordini != null) return;
     table_ordini = $('#tabella_ordini').DataTable({
-        "scrollY": "70vh",
+        "scrollY": "60vh",
         "scrollCollapse": true,
         'language': {
             "decimal": "",

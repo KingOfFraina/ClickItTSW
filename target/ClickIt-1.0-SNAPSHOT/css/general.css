@@ -184,3 +184,26 @@ body{
         transform: translate(-50%, -50%);
     }
 }
+
+.footer{
+    color: white;
+    background-color: #900C3F;
+    height: 2vh;
+    text-align: center;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    z-index: 1000;
+    font-family: LemonMilk;
+}
+
+.footer p{
+    margin: 0;
+    padding: 0;
+}
