@@ -305,6 +305,111 @@ public class AdminServlet extends HttpServlet {
             }
         }
 
+        else if(path.equals("/getProdotto")){
+            int idProdotto = Integer.parseInt(request.getParameter("idProdotto"));
+            ProdottoDAO dao = null;
+            try {
+                dao = new ProdottoDAO();
+                Prodotto p = dao.getProdottoById(idProdotto);
+
+                ArrayList<Specifiche> specifiche = p.getSpecifiche();
+                JSONObject jsonObject= new JSONObject();
+                JSONArray jsonArray = new JSONArray();
+
+                jsonObject.put("marca", p.getMarca());
+                jsonObject.put("modello", p.getModello());
+                jsonObject.put("prezzo", p.getPrezzo());
+                jsonObject.put("peso", p.getPeso());
+                jsonObject.put("dimensioni", p.getDimensioni());
+                jsonObject.put("categoria", p.getCategoria().getNomeCategoria());
+
+                for(Specifiche s: specifiche){
+                    JSONObject provv = new JSONObject();
+                    provv.put("nome", s.getNome());
+                    provv.put("valore", s.getValore());
+                    jsonArray.put(provv);
+                }
+
+                jsonObject.put("specifiche", jsonArray);
+
+                String risultato = jsonObject.toString();
+
+                PrintWriter out = response.getWriter();
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                out.print(risultato);
+                out.flush();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }finally {
+                return;
+            }
+
+        }
+
+       else if(path.equals("/modificaProdotto")){
+            try {
+                ProdottoDAO dao = new ProdottoDAO();
+                Prodotto p = new Prodotto();
+                p.setMarca(request.getParameter("marca"));
+                p.setModello(request.getParameter("modello"));
+                p.setPrezzo(Double.parseDouble(request.getParameter("prezzo")));
+                p.setDescrizione(request.getParameter("descrizione"));
+                p.setDimensioni(request.getParameter("dimensioni"));
+                p.setPeso(Double.parseDouble(request.getParameter("peso")));
+
+                Categoria provv = new Categoria();
+                provv.setNomeCategoria(request.getParameter("categoria"));
+                p.setCategoria(provv);
+
+                if(request.getParameter("immagine") != null) {
+                    Part part = request.getPart("immagine");
+                    String fileName = Paths.get(part.getSubmittedFileName()).getFileName().toString(); //nome immagine
+
+                    p.setImmagine(fileName);
+
+
+                    File file;
+                    try (InputStream fileStream = part.getInputStream()) {
+                        String uploadRoot = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0" + File.separator + "upload" + File.separator;
+                        file = new File(uploadRoot + fileName);
+                        if (!file.exists())
+                            Files.copy(fileStream, file.toPath());
+                    }
+
+                }
+                dao.addProdotto(p);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            try {
+                ProdottoDAO dao = new ProdottoDAO();
+                dao.eliminaSpecificheProdotto(Integer.parseInt(request.getParameter("idProdotto")));
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+
+            JSONObject obj = new JSONObject(request.getParameter("specifiche"));
+
+            ArrayList<Specifiche> list = new ArrayList<>();
+            JSONArray array = obj.getJSONArray("specifiche");
+            for(int i = 0 ; i < array.length() ; i++){
+                Specifiche s = new Specifiche();
+                s.setNome(array.getJSONObject(i).getString("nome"));
+                s.setValore(array.getJSONObject(i).getString("valore"));
+                list.add(s);
+            }
+
+            try {
+                ProdottoDAO  dao = new ProdottoDAO();
+                dao.aggiungiSpecifiche(list, dao.getLastProduct());
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }finally {
+                return;
+            }
+        }
+
         else{
             response.sendError(HttpServletResponse.SC_NOT_FOUND);
         }

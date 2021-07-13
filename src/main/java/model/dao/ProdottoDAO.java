@@ -208,4 +208,11 @@ public class ProdottoDAO {
 
         return rs.getInt(1);
     }
+
+    public int eliminaSpecificheProdotto(int idProdotto) throws SQLException {
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM specifiche WHERE id_prodotto = ?");
+        stmt.setInt(1, idProdotto);
+
+        return stmt.executeUpdate();
+    }
 }
