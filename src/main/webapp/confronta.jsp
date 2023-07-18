@@ -9,12 +9,12 @@
     <link rel="stylesheet" type="text/css" href="css/confronta.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Confronta - Click.it</title>
+    <title>Confronta - 2Chance</title>
 </head>
 <body>
 <!-- MENU NAVIGAZIONALE -->
 <div id="menu">
-    <a href="landingpage"><img src="img/logo.png" alt="Click.it" id="logo"></a>
+    <a href="landingpage"><img src="img/logo.png" alt="2Chance" id="logo"></a>
     <div id="searchbox">
         <form action="RicercaServlet" action="get" id="cerca">
             <i class="fas fa-search" onclick="document.getElementById('cerca').submit();"></i>

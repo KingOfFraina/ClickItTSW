@@ -26,7 +26,6 @@ function salvaModificaProdotto(){
     var formData = new FormData();
     if(file.files.length>0) formData.append('immagine', file.files[0]);
     formData.append('specifiche', json_def);
-    alert(id_prodotto_global);
     let url = `AdminServlet/modificaProdotto?marca=${marca}&modello=${modello}&prezzo=${prezzo}&descrizione=${descrizione}&dimensioni=${dimensioni}&peso=${peso}&categoria=${categoria}&id=${id_prodotto_global}`;
 
     $.ajax({

@@ -11,12 +11,12 @@
     <link rel="stylesheet" type="text/css" href="css/visualizzaOrdine.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Visualizza ordine - Click.it</title>
+    <title>Visualizza ordine - 2Chanche</title>
 </head>
 <body>
 <!-- MENU NAVIGAZIONALE -->
 <div id="menu">
-    <a href="landingpage"><img src="img/logo.png" alt="Click.it" id="logo"></a>
+    <a href="landingpage"><img src="img/logo.png" alt="2Chanche" id="logo"></a>
     <div id="navigazione">
         <c:choose>
             <c:when test="${sessionScope.user!= null}">
@@ -80,6 +80,7 @@
 <script src="functions/carrello.js"></script>
 <script src="functions/visualizzaOrdineAdmin.js"></script>
 <script src="functions/general.js"></script>
+
 
 </body>
 </html>

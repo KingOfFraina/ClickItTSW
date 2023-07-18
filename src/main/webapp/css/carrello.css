@@ -38,7 +38,7 @@
     height: 12vh;
     max-height: 13vh;
     max-width: 12vw;
-    border: 2px solid #900C3F;
+    border: 2px solid #F08354;
     padding: 15px;
 }
 
@@ -59,7 +59,7 @@
 }
 
 #acquistaCarrello{
-    background-color: #900C3F;
+    background-color: #F08354;
     border: none;
     color: white;
     padding: 15px 32px;

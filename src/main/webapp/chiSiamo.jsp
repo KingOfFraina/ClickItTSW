@@ -9,12 +9,12 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Chi siamo - Click.it</title>
+    <title>Chi siamo - 2Chance</title>
 </head>
 <body onload="start()">
 <!-- MENU NAVIGAZIONALE -->
 <div id="menu">
-    <a href="index.jsp"><img src="./img/logo.png" alt="Click.it" id="logo"></a>
+    <a href="index.jsp"><img src="img/logo.png" alt="2Chance" id="logo"></a>
     <div id="searchbox">
         <form action="RicercaServlet" action="get" id="cerca">
             <i class="fas fa-search" onclick="document.getElementById('cerca').submit();"></i>
@@ -73,16 +73,20 @@
 <!-- CORPO PAGINA-->
 <div id="corpo-pagina">
     <p>
-        Nel 1981 fa nasceva <b>Click.it</b>, da un’idea di Francesco Esposito e Sacco Matteo, la persona che ancora oggi è l’amministratore unico di questa dinamica società che ha costruito la propria storia grazie alla distribuzione di prodotti foto e video in Italia e all’estero. Ancora prima del commercio elettronico, sin dagli anni '80 <b>Click.it</b> effettuava vendita a distanza grazie alla diffusione via posta del proprio catalogo che oggi è diventato un “Cult” per tutti gli appassionati del settore, un’edizione unica in Italia, una guida all’acquisto sempre rinnovata e dettagliata distribuita gratuitamente a tutti i nostri clienti e sempre reperibile in formato elettronico sul nostro sito.
-        <br><br>
-        Forte dell’esperienza pluriennale maturata nella vendita per corrispondenza, <b>Click.it</b> ha affrontato il passaggio nell’era internet, sin dagli albori del commercio elettronico, in maniera pioneristica, creando già nel 1998 il proprio sito www.click.it oggi diventato uno dei principali store online in Italia. Click.it rappresenta uno dei migliori standard di commercio elettronico, è un catalogo virtuale completo aggiornato in tempo reale, uno strumento veloce, efficace che permette all’utente di usufruire con semplicità delle migliori funzioni come la ricerca avanzata dei prodotti e dei relativi accessori, la consultazione di approfondite schede tecniche o di acquistare uno dei tanti pacchetti promozionali offerti solo on-line a prezzi particolarmente vantaggiosi, il tutto con la possibilità di scegliere tra svariate modalità di pagamento affiancate dai migliori standard di sicurezza elettronica, come carte di credito del circuito Visa e Mastercard, postepay, paypal, contanti alla consegna e finanziamenti super agevolati grazie alla convenzione con le finanziarie Agosducato e Consel.
-        <br><br>
-        Oltre al sito internet <b>Click.it</b> può contare su 5 punti vendita diretta: Milano, Bologna, Firenze, Roma, Pisa, Sarno, Fraina di Sarno. I punti vendita Click.it sono guidati da una filosofia di vendita che ha l’obiettivo di garantire competenza , professionalità e servizio privilegiando in maniera assoluta l’assistenza alla propria clientela. Il personale addetto alla vendita è di alto livello professionale, in grado di consigliare al cliente il miglior acquisto in funzione delle proprie esigenze, oltre a tutti i prodotti foto e video nei nostri punti vendita sono organizzati per garantire anche tutti i servizi di stampa digitale e analogica, settore in cui grazie ai prezzi imbattibili ILFOTOAMATORE è leader da molti anni.
+        Siamo nati nel 2013, e da allora operiamo nel settore dell’economia circolare dei prodotti hi-tech con passione e competenza, avendo servito complessivamente oltre 150.000 clienti e ricevuto oltre 10.700 recensioni certificate con un indice di soddisfazione della clientela pari al 92%. Siamo stati inoltre i primi ad introdurre il concetto di iPhone Ricondizionato in Italia e i primi nel nostro settore ad essere quotati in Borsa, nell'ottobre 2020. Commercializziamo i nostri Smartphone Ricondizionati in Italia attraverso il nostro sito e-commerce 2Chance.tel e una catena in espansione di 5 negozi: a Milano, 2 a Roma, Bologna e Salerno.        <br><br>
+        <br>Il cuore della nostra azienda batte sia a Milano, dove abbiamo la sede legale e operativa, che nella provincia di Salerno, dove sono presenti il laboratorio di refurbishment, il magazzino ed il customer care.
+        E' proprio nella provincia di Salerno, che ogni giorno i nostri tecnici si prendono cura dei vostri smartphone, riportandoli al perfetto funzionamento, pronti per iniziare una seconda vita.
+        Ogni iPhone attraversa un'accurato processo di ricondizionamento in 5 fasi che inizia dai test hardware e software e finisce con la completa igienizzazione prima dell'inscatolamento. Secondo necessità, i device passano poi al reparto riparazioni dove vengono sostituite tutte le componenti usurate o non più funzionanti.<br><br>
+        E' la cura dei dettagli e un cospicuo numero di test (ben 37!) che rendono gli iPhone Ricondizionati in Italia da 2Chance affidabili, sicuri e garantiti 12 mesi. 2Chance significa Ricondizionato con passione in Italia!
+        Nei nostri negozi di Milano, Roma, Bologna e Salerno puoi trovare una vasta gamma di iPhone Ricondizionati, iPad Ricondizionati, Mac Ricondizionati.
+        I nostri ragazzi potranno assisterti nella scelta dello smartphone ideale per le tue esigenze e potranno illustrarti la gamma di servizi che puoi abbinare al tuo smartphone ricondizionato. Ad esempio l'assicurazione contro furto e danni, la nostra library di corsi online dedicati al mondo iPhone e Mac e molto altro.
+        Nei nostri negozi puoi anche vendere il tuo iPhone usato oppure permutarlo, ottenendo così uno sconto immediato sul prezzo di acquisto di un nuovo smartphone ricondizionato.
+
     </p>
 </div>
 <!-- FINE CORPO PAGINA-->
 <footer class="footer">
-    <p>Click.it P.IVA: 08831029384910293049a</p>
+    <p>2Chance P.IVA: 12345577777777</p>
 </footer>
 
 <style>

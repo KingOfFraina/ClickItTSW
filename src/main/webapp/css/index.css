@@ -9,7 +9,7 @@
 #menu-categorie{
 	height: calc(92vh - 2px);
 	width: 20vw;
-	background-color: #900C3F;
+	background-color: #F08354;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -69,7 +69,7 @@
 
 #carosello{
 	display: inline-block;
-	border: 5px solid #900C3F;
+	border: 5px solid #F08354;
 	border-radius: 4px;
 	position: relative;
 }
@@ -96,7 +96,7 @@
 #carosello-cursori i{
 	cursor: pointer;
 	transition: 0.2s;
-	color: #900C3F;
+	color: #F08354;
 }
 
 #carosello-cursori i:hover{
@@ -128,7 +128,7 @@
 	cursor: pointer;
 	height: 18vh;
 	width: 15vw;
-	border: 3px solid #900C3F;
+	border: 3px solid #F08354;
 	border-radius: 2px;
 	display: flex;
 	justify-content: center;
@@ -151,7 +151,7 @@
 }
 
 .prodotto:hover > .titolo-prodotto{
-	color: #900C3F;
+	color: #F08354;
 }
 
 .descrizione-prodotto{
@@ -162,7 +162,7 @@
 .prezzo-prodotto{
 	margin-top: 5px;
 	font-size: 20px;
-	color: #900C3F;
+	color: #F08354;
 }
 
 @media only screen and (max-width: 1050px) {
@@ -253,7 +253,7 @@
 		cursor: pointer;
 		height: 30vh;
 		width: 50vw;
-		border: 3px solid #900C3F;
+		border: 3px solid #F08354;
 		border-radius: 2px;
 		display: flex;
 		justify-content: center;
@@ -282,6 +282,6 @@
 	.prezzo-prodotto{
 		margin-top: 10px;
 		font-size: 20px;
-		color: #900C3F;
+		color: #F08354;
 	}
 }

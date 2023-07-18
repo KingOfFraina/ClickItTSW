@@ -9,12 +9,12 @@
     <link rel="stylesheet" type="text/css" href="css/carrello.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>La mia WishList - Click.it</title>
+    <title>La mia WishList - 2chance</title>
 </head>
 <body>
 <!-- MENU NAVIGAZIONALE -->
 <div id="menu">
-    <a href="landingpage"><img src="img/logo.png" alt="Click.it" id="logo"></a>
+    <a href="landingpage"><img src="img/logo.png" alt="2chance" id="logo"></a>
     <div id="navigazione">
         <c:choose>
             <c:when test="${sessionScope.user!= null}">

@@ -12,12 +12,12 @@
         <link rel="stylesheet" type="text/css" href="css/paginaUtente.css">
         <link rel="stylesheet" type="text/css" href="./css/general.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-        <title>Click.it</title>
+        <title>2Chance</title>
     </head>
     <body>
         <!-- MENU NAVIGAZIONALE -->
         <div id="menu">
-            <a href="landingpage"><img src="img/logo.png" alt="Click.it" id="logo"></a>
+            <a href="landingpage"><img src="img/logo.png" alt="2Chance" id="logo"></a>
             <div id="searchbox">
                 <form action="RicercaServlet" action="get" id="cerca">
                     <i class="fas fa-search" onclick="document.getElementById('cerca').submit();"></i>
@@ -80,7 +80,7 @@
             <p id="email">${sessionScope.user.email}<i id="editEmail" class="fas fa-pen-square"></i></p>
             <p id="telefono">${sessionScope.user.telefono}<i id="editTelefono" class="fas fa-pen-square"></i></p>
             <!-- <form action = EditProfiloServlet/editImmagine enctype='multipart/form-data' method="post"><input type="file" name = "modifica"><input type="submit"></form></p> -->
-            <a href="WishlistServlet?cod=2" style="margin-bottom: 10px; margin-top: 10px; text-decoration: none; color: #900c3f; font-size: 1.2em;"><i style="margin-right: 5px" class="fas fa-star"></i>WISHLIST</a>
+            <a href="WishlistServlet?cod=2" style="margin-bottom: 10px; margin-top: 10px; text-decoration: none; color: #F08354; font-size: 1.2em;"><i style="margin-right: 5px" class="fas fa-star"></i>WISHLIST</a>
             ORDINI
             <div id="ordini">
                 <table>
@@ -142,7 +142,7 @@
         </div>
         <!-- FINE CORPO PAGINA-->
         <footer class="footer">
-            <p>Click.it P.IVA: 08831029384910293049a</p>
+            <p>2Chance P.IVA: 12345577777777</p>
         </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="functions/registrazione.js"></script>

@@ -83,7 +83,6 @@ public class UtenteDAO {
     }
 
     public Utente getUserByEmailPassword(String email, String password) throws SQLException {
-
         if(email == null || password == null)
             throw new RuntimeException("Login error");
 
@@ -91,6 +90,7 @@ public class UtenteDAO {
         stmt.setString(1, email);
         stmt.setString(2, password);
         ResultSet rs = stmt.executeQuery();
+
 
         if(rs.next()){
             Utente utente = new Utente();

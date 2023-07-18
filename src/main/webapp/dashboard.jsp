@@ -19,7 +19,7 @@
     <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
-    <title>Click.it</title>
+    <title>2Chance</title>
 </head>
 <body>
 <%Utente u = (Utente) session.getAttribute("user");
@@ -29,7 +29,7 @@
 %>
 <!-- MENU NAVIGAZIONALE -->
 <div id="menu">
-    <img src="./img/logo.png" alt="Click.it" id="logo">
+    <img src="./img/logo.png" alt="2Chance" id="logo">
     <div id="searchbox">
         <form action="RicercaServlet" action="get" id="cerca">
             <i class="fas fa-search" onclick="document.getElementById('cerca').submit();"></i>
@@ -175,7 +175,7 @@
 </div>
 
 <footer class="footer">
-    <p>Click.it P.IVA: 08831029384910293049a</p>
+    <p>2Chance P.IVA: 12345577777777</p>
 </footer>
 
 <script src="functions/index.js"></script>

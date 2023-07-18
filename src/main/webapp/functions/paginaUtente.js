@@ -47,7 +47,7 @@ $(".fa-pen-square").click(function (e){
     }
 
     //EditProfiloServlet/editImmagine <input type="file" name = "modifica"><input type="submit"></form></p>
-    console.log("Click.it");
+    console.log("2chanche");
     window.location.replace("EditProfiloServlet/"+elemento+"?modifica="+edit);
 
 })

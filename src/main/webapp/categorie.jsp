@@ -9,12 +9,12 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Click.it</title>
+    <title>2Chance</title>
 </head>
 <body onload="start()">
 <!-- MENU NAVIGAZIONALE -->
 <div id="menu">
-    <a href="landingpage"><img src="img/logo.png" alt="Click.it" id="logo"></a>
+    <a href="landingpage"><img src="img/logo.png" alt="2Chance" id="logo"></a>
     <div id="searchbox">
         <form action="RicercaServlet" action="get" id="cerca">
             <i class="fas fa-search" onclick="document.getElementById('cerca').submit();"></i>
@@ -106,7 +106,7 @@
     }
 
     #menu-categorie thead{
-        color: #900c3f !important;
+        color: #F08354 !important;
     }
 
     #menu-categorie td a{

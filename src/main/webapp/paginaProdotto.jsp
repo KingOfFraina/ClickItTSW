@@ -9,12 +9,12 @@
     <link rel="stylesheet" type="text/css" href="css/prodottoInfo.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>${prodotto.marca} ${prodotto.modello} -Click.it</title>
+    <title>${prodotto.marca} ${prodotto.modello} -2Chance</title>
 </head>
 <body>
 <!-- MENU NAVIGAZIONALE -->
 <div id="menu">
-    <a href="landingpage"><img src="img/logo.png" alt="Click.it" id="logo"></a>
+    <a href="landingpage"><img src="img/logo.png" alt="2Chance" id="logo"></a>
     <div id="searchbox">
         <form action="RicercaServlet" action="get" id="cerca">
             <i class="fas fa-search" onclick="document.getElementById('cerca').submit();"></i>
@@ -179,7 +179,7 @@
         <div id="stelle">
             <i class="fa fa-star stella-recensione yellow"></i><i class="fa fa-star stella-recensione"></i><i class="fa fa-star stella-recensione"></i><i class="fa fa-star stella-recensione"></i><i class="fa fa-star stella-recensione"></i>
         </div>
-        <button onclick="aggiungiRecensione(${prodotto.id})" style="background-color: #900C3F; color: white; padding: 3px; cursor: pointer; border: none">Invia</button>
+        <button onclick="aggiungiRecensione(${prodotto.id})" style="background-color: #F08354; color: white; padding: 3px; cursor: pointer; border: none">Invia</button>
     </div>
 </div>
 <!-- FINE CORPO PAGINA-->

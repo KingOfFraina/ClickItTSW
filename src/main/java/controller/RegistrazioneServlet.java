@@ -14,6 +14,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
@@ -42,7 +43,12 @@ public class RegistrazioneServlet extends HttpServlet {
 
             File file;
             try (InputStream fileStream = part.getInputStream()) {
-                String uploadRoot = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0" + File.separator + "upload" + File.separator;
+                String currentDirectory = System.getProperty("user.dir");
+                Path currentPath = Paths.get(currentDirectory);
+                Path parentPath = currentPath.getParent(); // Ottiene il percorso del genitore
+                Path uploadPath = parentPath.resolve("upload"); // Risolve "upload" nel percorso del genitore
+
+                String uploadRoot = uploadPath.toString() + File.separator;
                 file = new File(uploadRoot + fileName);
                 if (!file.exists())
                     Files.copy(fileStream, file.toPath());
@@ -95,16 +101,13 @@ public class RegistrazioneServlet extends HttpServlet {
                     dispatcher.forward(request, response);
                 }else{
                     dao.addUtente(u);
+                    u = dao.getUserByEmailPassword(email, password);
                     request.setAttribute("utente", u);
                     request.setAttribute("errori", errori);
                     request.getSession().setAttribute("user", u);
                     response.sendRedirect(request.getServletContext().getContextPath() + "/landingpage");
                 }
             }
-
-
-
-
         } catch (SQLException throwable) {
             throwable.printStackTrace();
         }

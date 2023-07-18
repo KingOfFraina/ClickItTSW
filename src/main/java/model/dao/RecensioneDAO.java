@@ -21,7 +21,7 @@ public class RecensioneDAO {
 
 
     public ArrayList<Recensione> getRecensioniByUtente(Utente utente) throws SQLException {
-        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM clickIt.recensione, clickIt.utente, clickIt.prodotto WHERE recensione.cliente = ? AND recensione.cliente = utente.id_utente AND recensione.prodotto = prodotto.id_prodotto");
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM recensione, utente, prodotto WHERE recensione.cliente = ? AND recensione.cliente = utente.id_utente AND recensione.prodotto = prodotto.id_prodotto");
         stmt.setInt(1, utente.getId());
         ResultSet rs = stmt.executeQuery();
         ArrayList<Recensione> recensioni = new ArrayList<>();
@@ -63,7 +63,7 @@ public class RecensioneDAO {
     }
 
     public ArrayList<Recensione> getRecensioniByProdotto(Prodotto prodotto) throws SQLException {
-        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM clickIt.recensione, clickIt.utente, clickIt.prodotto WHERE recensione.prodotto = ? AND recensione.cliente = utente.id_utente AND recensione.prodotto = prodotto.id_prodotto");
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM recensione, utente, prodotto WHERE recensione.prodotto = ? AND recensione.cliente = utente.id_utente AND recensione.prodotto = prodotto.id_prodotto");
         stmt.setInt(1, prodotto.getId());
         ResultSet rs = stmt.executeQuery();
         ArrayList<Recensione> recensioni = new ArrayList<>();
@@ -107,6 +107,7 @@ public class RecensioneDAO {
 
     public int addRecensione (Recensione recensione) throws SQLException{
         PreparedStatement stmt = connection.prepareStatement("INSERT INTO recensione VALUES (default, ?, ?, default, ?, ?);");
+        System.out.println(recensione.getUtente().getId());
         stmt.setInt(1, recensione.getUtente().getId());
         stmt.setInt(2, recensione.getProdotto().getId());
         stmt.setString(3, recensione.getTesto());

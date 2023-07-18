@@ -16,8 +16,6 @@ function abbreviaDesc(){
 function setSearchBar(){
     const urlParams = new URLSearchParams(window.location.search);
     const categoria = urlParams.get('val');
-    console.log(urlParams);
-    console.log(categoria);
     document.getElementById("cerca_input").value = categoria;
 }
 

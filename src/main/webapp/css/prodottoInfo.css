@@ -25,7 +25,7 @@
     transform: translate(-50%, -50%);
     height: 45vh;
     width: 30vw;
-    border: 4px solid #900C3F;
+    border: 4px solid #F08354;
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -57,14 +57,14 @@
 }
 
 #prodotto-prezzo{
-    color: #900C3F;
+    color: #F08354;
     margin-bottom: 3vh;
 }
 
 .prodotto-azioni{
     height: 2.5vh;
     width: 12vw;
-    background-color: #900C3F;
+    background-color: #F08354;
     color: white;
     border-radius: 15px;
     font-size: 10px;
@@ -101,7 +101,7 @@
 .pulsante-controlli{
     height: 5vh;
     width: 8vw;
-    background-color: #900C3F;
+    background-color: #F08354;
     opacity: 0.3;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -161,7 +161,7 @@
 }
 
 .nome-specifica{
-    background-color: #900C3F;
+    background-color: #F08354;
     color: white;
 }
 
@@ -171,7 +171,7 @@
 
 
 .utente-recensione{
-    background-color: #900C3F;
+    background-color: #F08354;
     color: white;
 }
 
@@ -185,7 +185,7 @@
 }
 
 #scrivi-recensione{
-    background-color: #900C3F;
+    background-color: #F08354;
     color: white;
     text-align: center;
 }
@@ -209,7 +209,7 @@
     height: 50vh;
     width: 50vw;
     background-color: white;
-    border: 1px solid #900C3F;
+    border: 1px solid #F08354;
     position: relative;
     top: 50%;
     left: 50%;
@@ -234,7 +234,7 @@
     right: 5px;
     position: absolute;
     cursor: pointer;
-    color: #900C3F;
+    color: #F08354;
 }
 
 @media only screen and (max-width: 1350px) and (min-width: 700px) {
@@ -270,7 +270,7 @@
         position: static;
         height: 20vh;
         width: 50vw;
-        border: 4px solid #900C3F;
+        border: 4px solid #F08354;
         background-color: transparent;
         display: flex;
         justify-content: center;
@@ -306,14 +306,14 @@
     }
 
     #prodotto-prezzo{
-        color: #900C3F;
+        color: #F08354;
         margin-bottom: 0px;
     }
 
     .prodotto-azioni{
         height: 2.5vh;
         width: 50vw;
-        background-color: #900C3F;
+        background-color: #F08354;
         color: white;
         border-radius: 15px;
         font-size: 8px;
@@ -346,7 +346,7 @@
     .pulsante-controlli{
         height: 4vh;
         width: auto;
-        background-color: #900C3F;
+        background-color: #F08354;
         opacity: 0.3;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;

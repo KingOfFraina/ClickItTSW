@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	 <link rel="stylesheet" type="text/css" href="./css/general.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
- 	<title>Click.it</title>
+ 	<title>2Chance</title>
  </head>
  <body onload="start()">
  <% if(session.getAttribute("user") != null){
@@ -19,7 +19,7 @@
  }%>
  	<!-- MENU NAVIGAZIONALE -->
  	<div id="menu">
- 		<img src="./img/logo.png" alt="Click.it" id="logo">
+ 		<img src="./img/logo.png" alt="2Chance" id="logo">
 		<div id="searchbox">
 			<form action="RicercaServlet" action="get" id="cerca">
 				<i class="fas fa-search" onclick="document.getElementById('cerca').submit();"></i>
@@ -96,9 +96,9 @@
  		</div>
  		<div id="main-corpo">
  			<div id="carosello">
- 				<img src="img/carosello1.jpg" alt="" class="carosello-attiva">
- 				<img src="img/carosello2.jpg" alt="" class="carosello-disattivata">
- 				<img src="img/carosello3.jpg" alt="" class="carosello-disattivata">
+ 				<img src="img/carosello1.webp" alt="" class="carosello-attiva">
+ 				<img src="img/carosello2.webp" alt="" class="carosello-disattivata">
+ 				<img src="img/carosello3.webp" alt="" class="carosello-disattivata">
  				
  				<div id="carosello-cursori">
  					<i class="fas fa-chevron-left" onclick="cambiaFoto('precedente')"></i>
@@ -123,7 +123,7 @@
  	</div>
  	<!-- FINE CORPO PAGINA-->
 	<footer class="footer">
-		<p>Click.it P.IVA: 08831029384910293049a</p>
+		<p>2Chance P.IVA: 12345577777777</p>
 	</footer>
 
  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -122,6 +122,7 @@ public class ProdottoDAO {
         stmt.setDouble(5, p.getPeso());
         stmt.setString(7, p.getMarca());
         stmt.setString(8, p.getModello());
+        System.out.println(p.getPrezzo());
         stmt.setDouble(9, p.getPrezzo());
 
         return stmt.executeUpdate();

@@ -13,7 +13,7 @@
     margin-top: 10px;
     height: 100%;
     width: 49%;
-    border: 1px solid #900C3F;
+    border: 1px solid #F08354;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,7 @@
 
 .nomeprodotto{
     font-size: 20px;
-    color: #900C3F;
+    color: #F08354;
     margin-bottom: 15px;
 }
 
@@ -57,7 +57,7 @@ table{
 }
 
 .nome-specifica{
-    background-color: #900C3F;
+    background-color: #F08354;
     color: white;
 }
 

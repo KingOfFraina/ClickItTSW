@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
         try {
             UtenteDAO dao = new UtenteDAO();
             Utente utente = dao.getUserByEmailPassword(email, password);
+            System.out.println(utente);
             if(utente == null){
                 throw new LoginErratoException();
             }

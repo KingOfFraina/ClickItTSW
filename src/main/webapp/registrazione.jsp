@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="./css/registrazione.css">
     <link rel="stylesheet" type="text/css" href="./css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Click.it</title>
+    <title>2Chance</title>
 </head>
-<body style="background-image: radial-gradient(circle, rgba(144,12,63,1) 0%, rgba(77,0,30,1) 100%);">
+<body style="background-image: radial-gradient(circle, rgb(255,177,142) 0%, rgb(240,131,84) 100%);">
 
 <div id="registrazione-body">
     <a href="landingpage"><img src="./img/logo.png" alt="" id="logo"></a>
@@ -33,7 +33,7 @@
 </div>
 
 <footer class="footer">
-    <p>Click.it P.IVA: 08831029384910293049a</p>
+    <p>2Chance P.IVA: 12345577777777</p>
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -42,7 +42,7 @@
 <style>
     .footer{
         color: white;
-        background-color: #900C3F;
+        background-color: #F08354;
         height: 2vh;
         text-align: center;
         width: 100%;

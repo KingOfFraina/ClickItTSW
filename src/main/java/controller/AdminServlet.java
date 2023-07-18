@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -62,7 +63,13 @@ public class AdminServlet extends HttpServlet {
 
                 File file;
                 try (InputStream fileStream = part.getInputStream()) {
-                    String uploadRoot = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0" + File.separator + "upload" + File.separator;
+                    String currentDirectory = System.getProperty("user.dir");
+                    Path currentPath = Paths.get(currentDirectory);
+                    Path parentPath = currentPath.getParent(); // Ottiene il percorso del genitore
+                    Path uploadPath = parentPath.resolve("upload"); // Risolve "upload" nel percorso del genitore
+
+                    String uploadRoot = uploadPath.toString() + File.separator;
+
                     file = new File(uploadRoot + fileName);
                     if (!file.exists())
                         Files.copy(fileStream, file.toPath());
@@ -372,7 +379,13 @@ public class AdminServlet extends HttpServlet {
 
                     File file;
                     try (InputStream fileStream = part.getInputStream()) {
-                        String uploadRoot = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0" + File.separator + "upload" + File.separator;
+
+                        String currentDirectory = System.getProperty("user.dir");
+                        Path currentPath = Paths.get(currentDirectory);
+                        Path parentPath = currentPath.getParent(); // Ottiene il percorso del genitore
+                        Path uploadPath = parentPath.resolve("upload"); // Risolve "upload" nel percorso del genitore
+
+                        String uploadRoot = uploadPath.toString() + File.separator;
                         file = new File(uploadRoot + fileName);
                         if (!file.exists())
                             Files.copy(fileStream, file.toPath());

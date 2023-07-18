@@ -6,7 +6,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    border: 2px solid #900C3F;
+    border: 2px solid #F08354;
     -moz-box-shadow:    inset 0 0 10px #000000;
     -webkit-box-shadow: inset 0 0 10px #000000;
     box-shadow:         inset 0 0 10px #000000;
@@ -24,7 +24,7 @@
 .prodotto{
     height: 35vh;
     width: 25vw;
-    border: 2px solid #900C3F;
+    border: 2px solid #F08354;
     overflow: hidden;
     cursor: pointer;
     display: flex;
@@ -54,7 +54,7 @@
 .prezzo-prodotto{
     margin-top: 5px;
     font-size: 20px;
-    color: #900C3F;
+    color: #F08354;
 }
 
 @media only screen and (max-width: 600px) {

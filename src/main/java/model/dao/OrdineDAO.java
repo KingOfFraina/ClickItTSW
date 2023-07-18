@@ -62,7 +62,7 @@ public class OrdineDAO {
 
 
     public ArrayList<Ordine> getOrdiniByUtente(Utente utente) throws SQLException {
-        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM clickIt.ordine WHERE id_utente = ?;");
+        PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ordine WHERE id_utente = ?;");
         stmt.setInt(1, utente.getId());
         ResultSet rs = stmt.executeQuery();
         ArrayList<Ordine> ordini = new ArrayList<>();

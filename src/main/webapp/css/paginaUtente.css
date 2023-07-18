@@ -15,7 +15,7 @@
     width: 15vh;
     border-radius: 50%;
     padding: 2px;
-    border: 2px solid #900c3f;
+    border: 2px solid #F08354;
 }
 
 #ordini, #recensioni{
@@ -33,7 +33,7 @@
 }
 
 #ordini table thead, #recensioni table thead{
-    color: #900c3f;
+    color: #F08354;
 }
 
 #ordini table tbody, #recensioni table tbody{
@@ -61,7 +61,7 @@
 }
 
 .fa-pen-square:hover{
-    color: #900C3F;
+    color: #F08354;
 }
 
 @media only screen and (max-width: 1350px) {

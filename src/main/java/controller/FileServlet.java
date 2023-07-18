@@ -7,6 +7,8 @@ import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,9 +44,12 @@ public class FileServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
 
-        this.basePath = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0"
-                + File.separator + "upload";
+        String currentDirectory = System.getProperty("user.dir");
+        Path currentPath = Paths.get(currentDirectory);
+        Path parentPath = currentPath.getParent(); // Ottiene il percorso del genitore
+        Path uploadPath = parentPath.resolve("upload"); // Risolve "upload" nel percorso del genitore
 
+        this.basePath = uploadPath.toString() + File.separator;
         // Validate base path.
         if (this.basePath == null) {
             throw new ServletException("FileServlet init param 'basePath' is required.");

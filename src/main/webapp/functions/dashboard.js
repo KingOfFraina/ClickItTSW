@@ -96,16 +96,16 @@ function loadTableProdotti(jsonProdotti){
             {
                 "targets": -2,
                 "data": null,
-                "defaultContent": '<button id="cancella" style="background-color: #900C3F; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="elimina_icon" class="fas fa-trash-alt"></i></button>'
+                "defaultContent": '<button id="cancella" style="background-color: #F08354; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="elimina_icon" class="fas fa-trash-alt"></i></button>'
             },
             {
                 "targets": -1,
                 "data": null,
-                "defaultContent": '<button id="modifica" style="background-color: #900C3F; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="modifica_icon" class="fas fa-pen"></i></button>'
+                "defaultContent": '<button id="modifica" style="background-color: #F08354; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="modifica_icon" class="fas fa-pen"></i></button>'
             }
         ]
     });
-    $("#datagrid_visualizzaprodotti div.toolbar").html('<button onclick="aggiungiProdotto()" style="font-size: 15px; color: white; background-color: #900C3F; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
+    $("#datagrid_visualizzaprodotti div.toolbar").html('<button onclick="aggiungiProdotto()" style="font-size: 15px; color: white; background-color: #F08354; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
 
 
 
@@ -174,11 +174,11 @@ function loadTableCategorie(jsonCategorie){
             {
                 "targets": -1,
                 "data": null,
-                "defaultContent": '<button id="cancella" style="background-color: #900C3F; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="elimina_icon" class="fas fa-trash-alt"></i></button>'
+                "defaultContent": '<button id="cancella" style="background-color: #F08354; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="elimina_icon" class="fas fa-trash-alt"></i></button>'
             }
         ]
     });
-    $("#datagrid_visualizzacategorie div.toolbar").html('<button onclick="aggiungiCategoria()" style="font-size: 15px; color: white; background-color: #900C3F; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
+    $("#datagrid_visualizzacategorie div.toolbar").html('<button onclick="aggiungiCategoria()" style="font-size: 15px; color: white; background-color: #F08354; border: none; cursor: pointer"><i style="padding: 10px" class="fas fa-plus"></i></button>');
 
     $('#tabella_categorie tbody').on('click', 'tr', function (e) {
         if(e.target.getAttribute("id")=="cancella"||e.target.getAttribute("id")=="elimina_icon"){
@@ -275,7 +275,7 @@ function loadTableOrdini(jsonOrdini){
             {
                 "targets": -1,
                 "data": null,
-                "defaultContent": '<button id="info" style="background-color: #900C3F; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="info_icon" class="fas fa-info"></i></button>'
+                "defaultContent": '<button id="info" style="background-color: #F08354; border: none; color: white; padding: 12px 16px; font-size: 16px; cursor: pointer;"><i id="info_icon" class="fas fa-info"></i></button>'
             }
         ]
     });

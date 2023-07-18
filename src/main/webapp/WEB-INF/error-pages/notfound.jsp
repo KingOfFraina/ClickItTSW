@@ -9,7 +9,7 @@
     *{
         margin: 0;
         padding: 0;
-        background-color: #900C3F;
+        background-color: #F08354;
     }
 
     p{

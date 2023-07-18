@@ -64,21 +64,21 @@ body{
     border: none;
     text-indent:10px;
     outline: none;
-    color: #900C3F;
+    color: #F08354;
     font-family: 'Roboto Mono', monospace;
 }
 
 #registrazione-body form input[type="submit"]{
     cursor: pointer;
     background-color: transparent;
-    color: #900C3F;
-    border: 2px solid #900C3F;
+    color: #F08354;
+    border: 2px solid #F08354;
     transition: 0.2s;
     margin-bottom: 15px;
 }
 
 #registrazione-body form input[type="submit"]:hover{
-    background-color: #900c3f;
+    background-color: #F08354;
     color: white;
 }
 
